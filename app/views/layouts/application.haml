@@ -1,0 +1,15 @@
+!!! html
+%html
+  %head
+    %title Zambia
+    = stylesheet_link_tag :all 
+    = javascript_include_tag :defaults 
+    = csrf_meta_tag 
+  %body
+    #header
+      %h3 Welcome to Code and Coffee
+    #content
+      = yield 
+    #footer
+      Copyright &copy; 2010 code and coffe inc, all rights reserved
+    
