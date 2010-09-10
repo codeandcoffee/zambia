@@ -7,9 +7,20 @@
     = csrf_meta_tag 
   %body
     #header
-      %h3 Welcome to Code and Coffee
-    #content
-      = yield 
+      %h1 code & coffee
+    #sidebar
+      %ul
+        %li
+          %h2 Details
+          %ul
+            %li What:  Drink coffee, write code
+            %li Where:  A coffee shop with wifi
+            %li When:  Thursday mornings
+            %li Why:  Why not?
+    #page
+      #content
+        = yield 
     #footer
-      Copyright &copy; 2010 code and coffe inc, all rights reserved
+      %hr
+      Copyright &copy; 2010 code and coffee inc, all rights reserved
     
