@@ -4,5 +4,8 @@ class HomeController < ApplicationController
 
   def about
   end
+  
+  def staufs
+  end
 
 end
