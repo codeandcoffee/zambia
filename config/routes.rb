@@ -6,6 +6,8 @@ Zambia::Application.routes.draw do
   get "home/about"
   
   get "home/staufs"
+  
+  match :staufs => "home/staufs"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
