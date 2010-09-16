@@ -6,6 +6,7 @@ Zambia::Application.routes.draw do
   get "home/about"
   
   get "home/staufs"
+  get "home/polaris"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
