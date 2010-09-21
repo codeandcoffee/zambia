@@ -32,6 +32,6 @@ gem 'haml'
 # end
 
 group :test do
-  gem "rspec"
-  gem "rspec-rails"
+  gem "rspec", ">= 2.0.0.beta.20"
+  gem "rspec-rails", ">= 2.0.0.beta.20" 
 end
