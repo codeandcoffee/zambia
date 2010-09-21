@@ -1,5 +1,7 @@
 Zambia::Application.routes.draw do
   
+  get "about/index"
+
   root :to => 'home#index'
 
   get "home/index"
