@@ -34,4 +34,5 @@ gem 'haml'
 group :test do
   gem "rspec", ">= 2.0.0.beta.20"
   gem "rspec-rails", ">= 2.0.0.beta.20" 
+  gem "mongoid-rspec"
 end
