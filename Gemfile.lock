@@ -97,7 +97,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bson_ext (= 1.0.9)
   haml
+  mongoid (= 2.0.0.beta.19)
   mongoid-rspec
   rails (= 3.0.0)
   rspec (>= 2.0.0.beta.20)
