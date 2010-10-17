@@ -3,16 +3,11 @@ class PostController < ApplicationController
   end
   
   def show
-    
-    @post = Post.find(:first, :conditions => { :slug => :slug })
+    @post = Post.find(:first, :conditions => { :slug => params[:slug] })
    
     #if !@post
     #  render "404"
     #end
-   
-    if @post == nil
-      @post = Post.new(:title => "I AM THE TITLE", :body => "I AM THE BODY")
-    end
     
   end
   

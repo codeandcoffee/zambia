@@ -1,6 +1,8 @@
 Zambia::Application.routes.draw do |map|
   
-  map.wp_post 'post/:slug', :controller => 'post', :action=> 'show'
+  #map.wp_post 'post/:slug', :controller => 'post', :action=> 'show'
+  
+  match "/post/:slug" => "post#show"
   
   get "about/index"
 
