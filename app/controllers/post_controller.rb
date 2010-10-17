@@ -5,9 +5,9 @@ class PostController < ApplicationController
   def show
     @post = Post.find(:first, :conditions => { :slug => params[:slug] })
    
-    #if !@post
-    #  render "404"
-    #end
+    if !@post
+      render "index"
+    end
     
   end
   
