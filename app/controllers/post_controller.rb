@@ -8,7 +8,5 @@ class PostController < ApplicationController
     if !@post
       render "index"
     end
-    
   end
-  
 end
