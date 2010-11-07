@@ -9,4 +9,6 @@ class Location
   field :state
   field :postalCode
   field :hashtag
+  
+  validates_presence_of :name, :message => "Location name is required."
 end

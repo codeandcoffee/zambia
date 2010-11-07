@@ -13,9 +13,9 @@ class LocationsController < ApplicationController
   #POST /locations
   def create
     @location = Location.new(params[:location])
-    @location.save
-    
-    @locations = Location.all.asc(:name)
-    render :action => "index"
+    if (@location.save!)
+      @locations = Location.all.asc(:name)
+      render :action => "index"
+    end
   end
 end

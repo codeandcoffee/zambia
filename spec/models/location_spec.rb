@@ -14,4 +14,6 @@ describe Location do
   it { should have_field(:state) } 
   it { should have_field(:postalCode) } 
   it { should have_field(:hashtag) } 
+  
+  it { should validate_presence_of(:name) }
 end
