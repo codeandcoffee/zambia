@@ -15,7 +15,8 @@ Zambia::Application.routes.draw do |map|
   get "home/staufs"
   get "home/polaris"
   
-  get "location/new"
+  get "locations/new"
+  post "locations/create"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

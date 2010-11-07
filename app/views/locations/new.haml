@@ -1,0 +1,27 @@
+#post
+  %h1.title
+    Create a new Location
+  #entry
+    %fieldset
+      - form_for @location, :url => 'create' do |f|
+        .section
+          %label Name:
+          %br
+          = f.text_field :name, :size => 50
+        .section
+          %label Address:
+          %br
+          = f.text_field :name, :size => 50
+          %br
+          = f.text_field :name, :size => 50
+          %br
+          = f.text_field :name, :size => 50
+          = ', '
+          = f.text_field :name, :size => 2
+          = f.text_field :name, :size => 10
+        .section
+          %label Twitter Hashtag:
+          %br
+          = f.text_field :name
+        .section
+          = submit_tag 'Submit'
