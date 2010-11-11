@@ -1,0 +1,14 @@
+#post
+  %h1.title
+    Locations
+  #entry
+    %table
+      %thead
+        %td Name
+        %td City
+        %td Twitter Hashtag
+      - @locations.each do |location|
+        %tr
+          %td= location.name
+          %td= location.city
+          %td= location.hashtag
