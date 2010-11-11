@@ -23,6 +23,7 @@ gem 'haml'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
+gem 'mongo', '1.0.9'
 gem 'mongoid', '2.0.0.beta.19'
 gem 'bson_ext', '1.0.9'
 
