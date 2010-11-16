@@ -13,9 +13,16 @@ class LocationsController < ApplicationController
   #POST /locations
   def create
     @location = Location.new(params[:location])
-    if (@location.save!)
+
+    #if(@location.valid? == false)
+    #  render "view"
+    #end
+    
+    if (@location.save)
       @locations = Location.all.asc(:name)
       render :action => "index"
+    else
+      render "new"
     end
   end
 end

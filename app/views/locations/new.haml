@@ -4,6 +4,14 @@
   #entry
     %fieldset
       - form_for @location, :url => 'create' do |f|
+        - if @location.errors.any?
+          #error_explanation
+            %h2
+              = pluralize(@location.errors.count, "error")
+            %ul
+              - @location.errors.full_messages.each do |msg|
+                %li
+                  =msg
         .section
           %label Name:
           %br
