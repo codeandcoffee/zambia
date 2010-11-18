@@ -4,18 +4,24 @@ describe LocationsController do
 
   describe "when calling the new action" do
     
-    it "it should redirect to index with a notice on successful save" do
-      Location.stub(:valid?).and_return(true)
+    it "should redirect to index on successful save" do
+      mockOutSaveOnNewLocation(true)
       post :create, :name => "TEST LOCATION NAME"
-      response.should redirect_to(:index)
+      response.should redirect_to(:action => "index")
     end
     
     it "should re-render new template on failed save" do
-      Location.stub(:valid?).and_return(false)
+      mockOutSaveOnNewLocation(false)
       post :create, :name => "TEST LOCATION NAME"
       response.should render_template('new')
     end
   
   end
   
+end
+
+def mockOutSaveOnNewLocation(saveSucceeds)
+  @newLocation = Location.new()
+  @newLocation.stub!(:save).and_return(saveSucceeds)
+  Location.stub!(:new).and_return(@newLocation)
 end
