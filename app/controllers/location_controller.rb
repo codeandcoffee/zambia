@@ -1,16 +1,16 @@
-class LocationsController < ApplicationController
+class LocationController < ApplicationController
   
-  #GET /locations
+  #GET /location
   def index
     @locations = Location.all.asc(:name)
   end
   
-  #GET /locations/new
+  #GET /location/new
   def new
     @location = Location.new
   end
   
-  #POST /locations/create
+  #POST /location/create
   def create
     @location = Location.new(params[:location])
     
