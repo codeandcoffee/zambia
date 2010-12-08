@@ -7,15 +7,20 @@
     = csrf_meta_tag 
   %body
     #header
-      %h1 code & coffee
+      %h1
+        %a(href="/") code & coffee
     #sidebar
       %ul
         %li
           %h2 Details
           %ul
             %li What:  Drink coffee, write code
-            %li Where:  A coffee shop with wifi
-            %li When:  Thursday mornings
+            %li
+              Where:
+              %a(href="/location/index") view locations 
+              \/
+              %a(href="/location/new") create location
+            %li When:  Mornings, before work
             %li Why:  Why not?
     #page
       #content

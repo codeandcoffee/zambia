@@ -214,6 +214,7 @@ hr {
 }
 
 #sidebar li {
+    text-align: left;
 }
 
 #sidebar li ul {
