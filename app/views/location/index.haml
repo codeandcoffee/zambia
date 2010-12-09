@@ -4,11 +4,13 @@
   #entry
     %table
       %thead
+        %td
         %td Name
         %td City
         %td Twitter Hashtag
       - @locations.each do |location|
         %tr
+          %td= link_to 'edit', edit_location_path(location.name)
           %td= location.name
           %td= location.city
           %td= location.hashtag

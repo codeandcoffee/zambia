@@ -1,9 +1,9 @@
 #post
   %h1.title
-    Create a new Location
+    Edit a new Location
   #entry
     %fieldset
-      - form_for @location, :url => '/location' do |f|
+      - form_for :location, :url => location_url(@location.name), :html => { :method => :put } do |f|
         - if @location.errors.any?
           #error_explanation
             %h2
