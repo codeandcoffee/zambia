@@ -32,4 +32,7 @@
           %br
           = f.text_field :hashtag
         .section
+          %label Approved:
+          = f.check_box :isApproved
+        .section
           = submit_tag 'Submit'
