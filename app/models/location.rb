@@ -9,6 +9,7 @@ class Location
   field :state
   field :postalCode
   field :hashtag
+  field :isApproved, :type => Boolean, :default => false
   
   validates_uniqueness_of :name
   validates_presence_of :name, :message => "is required."
