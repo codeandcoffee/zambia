@@ -4,6 +4,9 @@ Zambia::Application.routes.draw do |map|
   
   match "/post/:slug" => "post#show"
   
+  match "/auth/:provider/callback" => "sessions#create"
+  match "/signout" => "sessions#destroy", :as => :signout
+  
   get "about/index"
 
   root :to => 'home#about'
