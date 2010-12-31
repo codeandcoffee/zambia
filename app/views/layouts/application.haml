@@ -25,7 +25,8 @@
             %li
               - if current_user
                 Welcome 
-                = current_user.uid
+                = current_user["provider"]
+                %br
                 = link_to "Sign Out", signout_path
               -else
                 Sign In With: 

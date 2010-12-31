@@ -5,6 +5,8 @@ class SessionsController < ApplicationController
     
     session[:user_id] = user.id
     
+    #raise auth.to_yaml
+    
     redirect_to root_url, :notice => "Signed in"
   end
   
