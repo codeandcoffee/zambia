@@ -22,15 +22,6 @@
               %a(href="/location/new") create location
             %li When:  Mornings, before work
             %li Why:  Why not?
-            %li
-              - if current_user
-                Welcome 
-                = current_user["provider"]
-                %br
-                = link_to "Sign Out", signout_path
-              -else
-                Sign In With: 
-                = link_to "Twitter", "/auth/twitter"
     #page
       #content
         = yield 
