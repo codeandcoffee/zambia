@@ -2,30 +2,23 @@
 %html
   %head
     %title Zambia
-    = stylesheet_link_tag :all 
-    = javascript_include_tag :defaults 
+    = stylesheet_link_tag "blueprint/screen.css", "south-street/jquery-ui-1.8.9.custom.css", "site.css"
+    = javascript_include_tag :all
     = csrf_meta_tag 
   %body
-    #header
-      %h1
-        %a(href="/") code & coffee
-    #sidebar
-      %ul
-        %li
-          %h2 Details
-          %ul
-            %li What:  Drink coffee, write code
-            %li
-              Where:
-              %a(href="/location/index") view locations 
-              \/
-              %a(href="/location/new") create location
-            %li When:  Mornings, before work
-            %li Why:  Why not?
-    #page
-      #content
-        = yield 
-    #footer
-      %hr
-      Copyright &copy; 2010 code and coffee inc, all rights reserved
+    #main.container
+      .span-4 &nbsp;
+      .span-16.ui-widget-content.ui-corner-all.prepend-top
+        %h2.prepend-top.prepend-1.span-14.last Code &amp; Coffee
+        = yield
+      .span-4.last
+      .span-24.prepend-top.footer copyright &copy; 2011 Code and Coffee
+    :javascript
+      $(function(){
+        $("#tabs").tabs();
+      });
+
+      $("#toggle").click(function(){
+        $("#main").toggleClass("showgrid");
+      });
     

@@ -6,7 +6,7 @@ Zambia::Application.routes.draw do |map|
   
   get "about/index"
 
-  root :to => 'home#about'
+  root :to => 'home#index'
 
   get "home/index"
 
