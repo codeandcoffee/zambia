@@ -16,6 +16,8 @@ Zambia::Application.routes.draw do |map|
   get "home/polaris"
   get "location/list"
   
+  get "posts/list" => "post#list"
+  
   resources :location
     
   # The priority is based upon order of creation:

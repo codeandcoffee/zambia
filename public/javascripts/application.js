@@ -5,5 +5,11 @@ $(document).ready(function() {
 			$("#locationList").html(data);
 		});
 	});
+	
+	$(".loadNews").click(function(){
+		$.get("posts/list", function(data) {
+			$("#newsList").html(data);
+		});
+	});
 
 });
