@@ -42,4 +42,10 @@ class LocationController < ApplicationController
     end
   end
   
+  #GET /location/list
+  def list
+   @locations = Location.all.asc(:name)
+    render :partial => "list", :layout => false
+  end
+  
 end

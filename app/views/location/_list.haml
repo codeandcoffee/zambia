@@ -1,0 +1,12 @@
+%ul
+  - @locations.each do |location|
+    %li{ :data => {:name => location.name, :day => location.dayOfWeek }}
+      %span.name= location.name
+      %span.location= location.city
+      %br
+      %span.meeting_time
+        Meets on 
+        %i=location.dayOfWeek
+        at
+        %i=location.time.strftime("%I:%M%p")
+      %span.hash_tag= location.hashtag
