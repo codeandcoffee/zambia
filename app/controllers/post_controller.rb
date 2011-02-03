@@ -11,6 +11,7 @@ class PostController < ApplicationController
   end
   
   def list
+    @posts = Post.all
     render :partial => "list", :layout => false
   end
 end
