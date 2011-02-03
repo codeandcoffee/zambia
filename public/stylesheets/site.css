@@ -10,3 +10,11 @@
   background-color: #d7ffb7; 
   padding: 4px;
 }
+
+.location-list {
+	list-style: none;
+}
+
+.name{
+	font-weight: bold;
+}

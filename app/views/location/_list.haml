@@ -1,4 +1,4 @@
-%ul
+%ul.location-list
   - @locations.each do |location|
     %li{ :data => {:name => location.name, :day => location.dayOfWeek }}
       %span.name= location.name
