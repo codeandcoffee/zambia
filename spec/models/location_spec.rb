@@ -15,6 +15,8 @@ describe Location do
   it { should have_field(:postalCode) } 
   it { should have_field(:hashtag) }
   it { should have_field(:isApproved) }
+  it { should have_field(:dayOfWeek) }
+  it { should have_field(:time) }
   
   it { should validate_presence_of(:name) }
 end
