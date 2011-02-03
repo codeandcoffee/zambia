@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+Location.create(:name => "Stauf's", :city => "Grandview", :state => "Ohio", :dayOfWeek => "Thursday", :time => "07:00", :isApproved => true)
+Location.create(:name => "Cup 'O Joe, German Village", :city => "Columbus", :state => "Ohio", :isApproved => true)
+Location.create(:name => "Polaris Panera", :city => "Delaware", :state => "Ohio", :isApproved => true)
