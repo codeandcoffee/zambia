@@ -4,9 +4,9 @@
       %li
         %a{:href => "#tabs-1"} Home
       %li
-        %a.loadLocations{:href => "#tabs-2"} Locations
+        %a{:href => "location/list"} Locations
       %li
-        %a.loadNews{:href => "#tabs-3"} News 
+        %a{:href => "posts/list"} News 
       %li
         %a{:href => "#tabs-4"} Contact
     #tabs-1
@@ -16,11 +16,16 @@
         %p Code & coffee is an informal get together to write some code Thursday morning. There are no requirements other than the willingness to sit down, pair up, and learn something new. We're going with mornings because the evenings are full enough as it is. Why add to the chaos of user groups, soccer games, and lawn mowing?
         %p If you're interested in joining in, just show up. No invited needed, you don't need to RSVP, you just need a laptop. Coffee not provided, but it's just a few steps away. ;)
         %p Location will be updated in the posts below, feel free to drop a comment in if you're going to join us. Hope to see you there.
-    #tabs-2
-      #locationList
-    #tabs-3
-      #newsList
     #tabs-4
       %p email blankenburg
   %div
     %p &nbsp;
+
+:javascript
+  $(function(){
+    $("#tabs").tabs();
+  });
+
+  $("#toggle").click(function(){
+    $("#main").toggleClass("showgrid");
+  });
