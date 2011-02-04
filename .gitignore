@@ -4,5 +4,3 @@ log/*.log
 tmp/**/*
 .rvmrc
 .DS_Store
-public/.DS_Store
-

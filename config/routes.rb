@@ -9,7 +9,7 @@ Zambia::Application.routes.draw do |map|
   
   get "about/index"
 
-  root :to => 'home#about'
+  root :to => 'home#index'
 
   get "home/index"
 
@@ -17,6 +17,9 @@ Zambia::Application.routes.draw do |map|
   
   get "home/staufs"
   get "home/polaris"
+  get "location/list"
+  
+  get "posts/list" => "post#list"
   
   resources :location
     

@@ -9,4 +9,9 @@ class PostController < ApplicationController
       render "index"
     end
   end
+  
+  def list
+    @posts = Post.all
+    render :partial => "list", :layout => false
+  end
 end
