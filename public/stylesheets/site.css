@@ -22,3 +22,15 @@
 .name{
 	font-weight: bold;
 }
+
+div.topright{
+  display:block;
+
+  position:absolute;
+  top: 0;
+  right: 0;
+
+  background:#eee;
+  border:1px solid #ddd;
+  
+}
