@@ -15,4 +15,12 @@ class Location
   
   validates_uniqueness_of :name
   validates_presence_of :name, :message => "is required."
+
+  def goodAddress? 
+    !street1.blank? && !city.blank?
+  end
+
+  def google_map_url
+    "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{street1},+#{state},+#{postalCode}"
+  end
 end

@@ -8,4 +8,6 @@
         Meets on 
         %i=location.dayOfWeek
         %i=location.time.strftime(" at %I:%M%p") if !location.time.blank?
+        -if location.goodAddress?
+          %a{:href => location.google_map_url}Map 
       %span.hash_tag= location.hashtag
