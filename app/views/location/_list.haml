@@ -1,12 +1,11 @@
 %ul.location-list
   - @locations.each do |location|
-    %li{ :data => {:name => location.name, :day => location.dayOfWeek }}
+    %li.home-callout.ui-corner-all{ :data => {:name => location.name, :day => location.dayOfWeek }}
       %span.name= location.name
       %span.location= location.city
       %br
       %span.meeting_time
         Meets on 
         %i=location.dayOfWeek
-        at
-        %i=location.time.strftime("%I:%M%p")
+        %i=location.time.strftime(" at %I:%M%p") if !location.time.blank?
       %span.hash_tag= location.hashtag
