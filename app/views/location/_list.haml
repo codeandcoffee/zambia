@@ -3,11 +3,12 @@
     %li.home-callout.ui-corner-all{ :data => {:name => location.name, :day => location.dayOfWeek }}
       %span.name= location.name
       %span.location= location.city
+      -if location.goodAddress?
+        %span.map
+          %a{:href => location.google_map_url, :target => "_blank"}Map 
       %br
       %span.meeting_time
         Meets on 
         %i=location.dayOfWeek
-        %i=location.time.strftime(" at %I:%M%p") if !location.time.blank?
-        -if location.goodAddress?
-          %a{:href => location.google_map_url}Map 
+        %i=location.time.strftime(" at %I:%M %p") if !location.time.blank?
       %span.hash_tag= location.hashtag
