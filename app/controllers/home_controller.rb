@@ -8,4 +8,8 @@ class HomeController < ApplicationController
   def staufs
   end
 
+  def contact_email
+    render :contact
+  end
+
 end
