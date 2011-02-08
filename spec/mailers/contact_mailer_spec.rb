@@ -9,9 +9,10 @@ describe ContactMailer do
 
   describe "When sending a contact email" do
     before :each do
+      @name = "Spongebob Squarepants"
       @email = "spongebob@bikinibottom.rr.com"
       @body = "Code and coffee at the Krusty Krab"
-      @contact = Contact.new(@email, @body)
+      @contact = Contact.new(@name, @email, @body)
       
       @mail = ContactMailer.contact_email(@contact).deliver
     end
@@ -24,8 +25,12 @@ describe ContactMailer do
       @mail.subject.should == "Code and Coffee Contact message"
     end
 
-    it 'the body should contain the text in the contact body' do
+    it 'the body should contain the text in the body of the message' do
       @mail.encoded.include?(@body).should be_true 
+    end
+
+    it 'should have the contact name in the body of the message' do
+      @mail.encoded.include?(@name).should be_true
     end
 
     it 'should have tim@timwingfield.com as the to address' do
