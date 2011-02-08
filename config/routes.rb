@@ -14,6 +14,7 @@ Zambia::Application.routes.draw do |map|
   get "home/index"
 
   get "home/about"
+  post "home/contact_email"
   
   get "home/staufs"
   get "home/polaris"

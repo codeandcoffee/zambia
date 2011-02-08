@@ -17,7 +17,19 @@
         %p If you're interested in joining in, just show up. No invited needed, you don't need to RSVP, you just need a laptop. Coffee not provided, but it's just a few steps away. ;)
         %p Location will be updated in the posts below, feel free to drop a comment in if you're going to join us. Hope to see you there.
     #tabs-4
-      %p contact form coming soon! 
+      - form_for :contact_email, :url => "home/contact_email" do 
+        %ul
+          %li
+            %label{ :for => "name" } Name:
+            %input{ :type => "text", :name => "name" }
+          %li
+            %label{ :for => "email" } Email:
+            %input{ :type => "text", :name => "email" }
+          %li
+            %label{ :for => "body" } Message:
+            %textarea{ :name => "body" }
+          %li
+            %input{ :type => "submit", :value => "Send" }
   %div
     %p &nbsp;
 
