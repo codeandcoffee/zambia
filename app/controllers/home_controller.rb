@@ -8,4 +8,10 @@ class HomeController < ApplicationController
   def staufs
   end
 
+  def contact_email
+    @contact = Contact.new(params[:name], params[:email], params[:body])
+    ContactMailer.contact_email(@contact).deliver
+    render :contact, :layout => false
+  end
+
 end
