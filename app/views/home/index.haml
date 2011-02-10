@@ -18,7 +18,7 @@
         %p Location will be updated in the posts below, feel free to drop a comment in if you're going to join us. Hope to see you there.
     #tabs-4
       - form_for :contact_email, :url => "home/contact_email" do 
-        %ul
+        %ul.form-list
           %li
             %label{ :for => "name" } Name:
             %input{ :type => "text", :id => "name", :name => "name" }
