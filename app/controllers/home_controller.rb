@@ -10,8 +10,9 @@ class HomeController < ApplicationController
 
   def contact_email
     @contact = Contact.new(params[:name], params[:email], params[:body])
-    #ContactMailer.contact_email(@contact).deliver
-    render :contact, :layout => false
+    ContactMailer.contact_email(@contact).deliver
+    #render :contact, :layout => false
+    render :contact
   end
 
 end

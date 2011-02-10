@@ -29,7 +29,7 @@
             %label{ :for => "body" } Message:
             %textarea{ :id => "body", :name => "body" }
           %li
-            %input{ :type => "button", :id => "send_email", :value => "Send" }
+            %input{ :type => "submit", :id => "send_email", :value => "Send" }
   %div
     %p &nbsp;
 
@@ -37,9 +37,4 @@
   $(function(){
     $("#tabs").tabs();
 
-    $("#send_email").click(function(){
-      $.post("home/contact_email", $("#contact_email").serialize(), function(data){
-        $("#tabs-4").html(data);
-      });
-    });
   });
