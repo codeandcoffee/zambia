@@ -11,6 +11,15 @@
   padding: 4px;
 }
 
+.form-list{
+  list-style-type: none;
+}
+
+.content-div{
+  padding: 4px;
+  margin: 2px 0 8px 0;
+}
+
 .location-list {
 	list-style: none;
 }
@@ -29,12 +38,9 @@
 
 div.topright{
   display:block;
-
   position:absolute;
   top: 0;
   right: 0;
-
   background:#eee;
   border:1px solid #ddd;
-  
 }
