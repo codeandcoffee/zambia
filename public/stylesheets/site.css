@@ -1,3 +1,21 @@
+.main-logo img
+{
+  background-color: #fff;
+  padding: 8px;
+  border: solid 4px #9bbac3;
+}
+
+.main-logo H2
+{
+  display: inline;
+  font-size: 5.2em;
+  margin-left: 12px;
+  font-family: 'Goudy Bookletter 1911', Times, serif;
+  color: #665d51;
+  text-shadow: 4px 4px 4px #d1c5a4;
+  vertical-align: top;
+}
+
 .footer
 {
   color: #8e9c6d; 
