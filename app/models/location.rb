@@ -15,6 +15,7 @@ class Location
   
   validates_uniqueness_of :name
   validates_presence_of :name, :message => "is required."
+
   def goodAddress? 
     !street1.blank? && !city.blank?
   end

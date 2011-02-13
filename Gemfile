@@ -23,9 +23,9 @@ gem 'haml'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
-gem 'bson', '=1.0.9'
-gem 'mongo', '=1.0.9'
-gem 'mongoid', '2.0.0.beta.19'
+gem 'bson', '=1.2.0'
+gem 'mongo', '=1.2.0'
+gem 'mongoid', '2.0.0.beta.20'
 gem 'bson_ext', '=1.0.9'
 gem 'omniauth'
 
@@ -39,5 +39,5 @@ gem 'omniauth'
 group :test do
   gem "rspec", ">=2.2.0"
   gem "rspec-rails", ">=2.2.1" 
-  gem "mongoid-rspec"
+  gem "mongoid-rspec", "1.2.1"
 end
