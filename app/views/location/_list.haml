@@ -1,3 +1,5 @@
+#tab-banner-image
+  = image_tag("map_banner.png", :alt => "Location, location, location")
 %ul.location-list
   - @locations.each do |location|
     %li.home-callout.ui-corner-all{ :data => {:name => location.name, :day => location.dayOfWeek }}

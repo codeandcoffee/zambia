@@ -16,6 +16,11 @@
   vertical-align: top;
 }
 
+#tab-banner-image
+{
+  margin: 2px 0 8px 0;
+}
+
 .footer
 {
   color: #8e9c6d; 
