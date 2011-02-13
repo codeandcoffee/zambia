@@ -42,7 +42,23 @@
   list-style-type: none;
 }
 
-.form-list TEXTAREA { height: 80px; }
+.form-list TEXTAREA { height: 80px; width: 270px; }
+.form-list INPUT { width: 280px; }
+
+.form-list LABEL 
+{ 
+  width: 100px; 
+  display: inline-block; 
+  text-align: right; 
+  vertical-align: top;
+  margin-top: 6px;
+}
+
+.form-list .submit-button
+{
+  width: auto;
+  margin-left: 106px;
+}
 
 .content-div{
   padding: 4px;
