@@ -44,7 +44,7 @@ class LocationController < ApplicationController
   
   #GET /location/list
   def list
-   @locations = Location.all.asc(:name)
+    @locations = Location.find(:all, :conditions => { :isApproved => true })
     render :partial => "list", :layout => false
   end
   

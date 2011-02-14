@@ -4,35 +4,6 @@
   #entry
     %fieldset
       - form_for :location, :url => location_url(@location.name), :html => { :method => :put } do |f|
-        - if @location.errors.any?
-          #error_explanation
-            %h2
-              = pluralize(@location.errors.count, "error")
-            %ul
-              - @location.errors.full_messages.each do |msg|
-                %li
-                  =msg
-        .section
-          %label Name:
-          %br
-          = f.text_field :name, :size => 50
-        .section
-          %label Address:
-          %br
-          = f.text_field :street1, :size => 50
-          %br
-          = f.text_field :street2, :size => 50
-          %br
-          = f.text_field :city, :size => 50
-          = ', '
-          = f.text_field :state, :size => 2
-          = f.text_field :postalCode, :size => 10
-        .section
-          %label Twitter Hashtag:
-          %br
-          = f.text_field :hashtag
-        .section
-          %label Approved:
-          = f.check_box :isApproved
+        = render "form", :form => form, :f => f
         .section
           = submit_tag 'Update'

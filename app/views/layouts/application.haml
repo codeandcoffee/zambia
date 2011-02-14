@@ -2,14 +2,19 @@
 %html
   %head
     %title Zambia
-    = stylesheet_link_tag "blueprint/screen.css", "south-street/jquery-ui-1.8.9.custom.css", "site.css"
+    = stylesheet_link_tag "blueprint/screen.css", "zambia/jquery-ui-1.8.9.custom.css", "site.css"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911"
     = javascript_include_tag :all
     = csrf_meta_tag 
   %body
     #main.container
       .span-4 &nbsp;
       .span-16.ui-widget-content.ui-corner-all.prepend-top
-        %h2.prepend-top.prepend-1.span-14.last Code &amp; Coffee
+        .main-logo.prepend-1.prepend-top
+          = image_tag("cnc_logo_70.png", :alt => "Code and Coffee", :class => "ui-corner-all")
+          %h2 Code &amp; Coffee
+        #ajaxBusy.topright
+          Loading...
         = yield
       .span-4.last
       .span-24.prepend-top.footer copyright &copy; 2011 Code and Coffee

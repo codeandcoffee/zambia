@@ -1,0 +1,11 @@
+!!! html
+%html
+  %head
+    %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }
+
+  %body
+    %h2 Contact from the Code and Coffee site
+    %p
+      message from: 
+      %b= @name
+    %p= @email_body
