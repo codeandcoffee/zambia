@@ -3,7 +3,9 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe PostController do
   
   before :each do
-    Post.create!(:slug => 'TESTPOST')
+    Post.create!(:slug => 'TESTPOST', 
+                 :author => "Spongebob Squarepants", 
+                 :title => "Who lives in a pineapple under the sea?")
   end
 
   describe "when calling the show action" do
