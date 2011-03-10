@@ -1,9 +1,15 @@
 require 'spec_helper'
+require 'cancan/matchers'
 
 describe LocationController do
 
+  before (:each) do
+    user = User.create!(:email => "test@emailaddress.com", :password => "password")
+    session[:user_id] = user.id
+  end
+  
   context "when calling the new action" do
-    
+
     it "should redirect to index on successful save" do
       mockOutSaveOnNewLocation(true)
       post :create, :location => { "name" => "TEST LOCATION NAME" }

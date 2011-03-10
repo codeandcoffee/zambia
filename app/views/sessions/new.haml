@@ -1,0 +1,16 @@
+#post
+  %h1.title
+    Log in
+  %fieldset
+    - form_tag sessions_path do
+      .section
+        %label Email:
+        %br
+        = text_field_tag :email, params[:email]
+        %br
+        %label Password:
+        %br
+        = password_field_tag :password
+       
+      .section
+      = submit_tag 'Submit'
