@@ -1,5 +1,12 @@
 Zambia::Application.routes.draw do |map|
   
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "log_out" => "sessions#destroy", :as => "log_out"
+
+  #get "register" => "users#new", :as => "register"
+
+  resources :users
+  resources :sessions
   #map.wp_post 'post/:slug', :controller => 'post', :action=> 'show'
   
   match "/post/:slug" => "post#show"
@@ -8,6 +15,7 @@ Zambia::Application.routes.draw do |map|
   match "/signout" => "sessions#destroy", :as => :signout
   
   get "about/index"
+  get "admin" => "admin#index", :as => "admin"
 
   root :to => 'home#index'
 

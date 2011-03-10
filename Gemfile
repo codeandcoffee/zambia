@@ -27,7 +27,8 @@ gem 'bson', '=1.2.0'
 gem 'mongo', '=1.2.0'
 gem 'mongoid', '2.0.0.beta.20'
 gem 'bson_ext', '=1.0.9'
-gem 'omniauth'
+gem "bcrypt-ruby", :require => "bcrypt"
+gem "cancan"
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators

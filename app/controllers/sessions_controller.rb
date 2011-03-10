@@ -1,17 +1,21 @@
 class SessionsController < ApplicationController
+  def new
+  end
+  
   def create
-    auth = request.env["omniauth.auth"]
-    user = User.find_or_create_by(:conditions => { :uid => auth["uid"], :provider => auth["provider"] })
-    
-    session[:user_id] = user.id
-    
-    #raise auth.to_yaml
-    
-    redirect_to root_url, :notice => "Signed in"
+    user = User.authenticate(params[:email], params[:password])
+    if user
+      session[:user_id] = user.id
+      redirect_to admin_url
+    else
+      flash.now.alert = "Invalid email or password"
+      render "new"
+    end
   end
   
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, :notice => "Signed out"
+    redirect_to root_url
   end
+
 end

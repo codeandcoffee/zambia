@@ -1,5 +1,7 @@
 class LocationController < ApplicationController
   
+  authorize_resource
+  
   #GET /location
   def index
     @locations = Location.all.asc(:name)
