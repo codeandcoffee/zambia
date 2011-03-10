@@ -4,7 +4,7 @@ class Ability
   def initialize(user)
     user ||= User.new #guest
     
-    if user.email?
+    if user.email? #until we define roles
       can :manage, :all
     else
       can :list, Location

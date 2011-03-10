@@ -6,6 +6,9 @@ describe PostController do
     Post.create!(:slug => 'TESTPOST', 
                  :author => "Spongebob Squarepants", 
                  :title => "Who lives in a pineapple under the sea?")
+    
+     user = User.create!(:email => "test@emailaddress.com", :password => "password")
+     session[:user_id] = user.id
   end
 
   describe "when calling the show action" do
