@@ -1,0 +1,9 @@
+#post
+  %h1.title
+    Edit a Post
+  #entry
+    %fieldset
+      - form_for :post, :html => { :method => :put } do |f|
+        = render "form", :form => form, :f => f
+        .section
+          = submit_tag 'Update'
