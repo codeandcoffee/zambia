@@ -1,6 +1,9 @@
 class PostController < ApplicationController
   
   authorize_resource
+
+  def new
+  end
   
   def index
   end
