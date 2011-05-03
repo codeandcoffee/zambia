@@ -1,0 +1,15 @@
+- if @post.errors.any?
+  #error_explanation
+    %h2
+      = pluralize(@post.errors.count, "error")
+      %ul
+      - @post.errors.full_messages.each do |msg|
+        %li
+          =msg
+          
+.section
+  %label Title:
+  %br
+  = f.text_field :title, :size => 100
+  %br
+  = f.text_area :body, :size => 100
