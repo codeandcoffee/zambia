@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   authorize_resource
   
   def index
+      @post = Post.all.asc(:name)
   end
   
   def show
@@ -26,8 +27,8 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
     @post.author = current_user.email
     
-    #raise @post.to_yaml
-    
+    @post.slug = @post.to_slug
+  
     if (@post.save)
       render "edit"
     else
