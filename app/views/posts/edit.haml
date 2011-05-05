@@ -3,7 +3,7 @@
     Edit a Post
   #entry
     %fieldset
-      - form_for :post, :html => { :method => :put } do |f|
+      - form_for @post do |f|
         = render "form", :form => form, :f => f
         .section
           = submit_tag 'Update'
