@@ -7,11 +7,7 @@ Zambia::Application.routes.draw do |map|
 
   resources :users
   resources :sessions
-  resource :posts
-  match "/post/:slug" => "post#show"
-  get "posts/list" => "posts#list"
-  #map.wp_post 'post/:slug', :controller => 'post', :action=> 'show'
-  
+  resources :posts
   
   match "/auth/:provider/callback" => "sessions#create"
   match "/signout" => "sessions#destroy", :as => :signout
