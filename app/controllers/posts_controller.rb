@@ -2,16 +2,14 @@ class PostsController < ApplicationController
   
   authorize_resource
   
+  # GET /posts
   def index
-      @post = Post.all.asc(:name)
+    @posts = Post.all.asc(:name)
   end
   
+  # GET /posts/:id
   def show
-    @post = Post.find(:first, :conditions => { :slug => params[:slug] })
-   
-    if !@post
-      render "index"
-    end
+    @post = Post.find(params[:id])
   end
   
   def list
@@ -19,10 +17,12 @@ class PostsController < ApplicationController
     render :partial => "list", :layout => false
   end
 
+  # GET /posts/new
   def new
     @post = Post.new
   end
   
+  # POST /posts
   def create
     @post = Post.new(params[:post])
     @post.author = current_user.email
@@ -30,13 +30,31 @@ class PostsController < ApplicationController
     @post.slug = @post.to_slug
   
     if (@post.save)
-      render "edit"
+      redirect_to posts_path
     else
-      render "new"
+      render :new
     end
   end
   
+  # GET /posts/:id/edit
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  # PUT /posts/:id
   def update
-    render "edit"
+    @post = Post.find(params[:id])
+    if (@post.update_attributes(params[:post]))
+      redirect_to posts_path
+    else
+      render :edit
+    end
+  end
+
+  # DELETE /posts/:id
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 end

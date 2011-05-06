@@ -12,6 +12,8 @@ class Post
   validates_presence_of :title
   
   def to_slug
+    return if title.nil?
+
     #strip the string
     ret = title.strip
 
