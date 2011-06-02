@@ -1,8 +1,8 @@
 #tab-banner-image
   = image_tag("newspaper.png", :alt => "Newsworthy things")
-%ul.post-list
+.post-list
   - @posts.each do |post|
-    %li
-      %span.body= render :inline => post.body if post.body
-      %br
-      %span.date-time= post.created_at.strftime("%c")
+    .one-post
+      .title= render :inline => post.title if post.title 
+      .body= render :inline => post.body if post.body
+      .date-time= post.created_at.strftime("%a, %b %d, %Y")
