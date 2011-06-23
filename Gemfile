@@ -26,7 +26,7 @@ gem 'haml'
 gem 'bson', '=1.2.0'
 gem 'mongo', '=1.2.0'
 gem 'mongoid', '2.0.0.beta.20'
-gem 'bson_ext', '=1.0.9'
+gem 'bson_ext', '=1.2.0'
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "cancan"
 

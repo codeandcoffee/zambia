@@ -45,10 +45,8 @@ a:hover, a:active
 
 .home-callout
 {
-  border: solid 1px #665d51; 
-  background-color: #dff5ab; 
-  padding: 4px;
-  height: 240px;
+  height: 340px;
+  padding-right: 18px;
 }
 
 .form-list{
