@@ -6,6 +6,7 @@ Zambia::Application.routes.draw do |map|
   #get "register" => "users#new", :as => "register"
 
   resources :users
+  get "posts/list" => "posts#list"
   resources :sessions
   resources :posts
   

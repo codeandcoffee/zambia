@@ -12,8 +12,41 @@
     #tabs-1
       #tab-banner-image
         = image_tag("coffee_and_keyboard.png", :alt => "Caffeinated Coding")
-      .span-4.ui-corner-all.home-callout
-        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce egestas porttitor mollis. Fusce scelerisque convallis libero vitae placerat.
+      .span-5.ui-corner-all.home-callout
+        <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+        :javascript
+          new TWTR.Widget({
+            version: 2,
+            type: 'search',
+            search: '#codeandcoffee',
+            interval: 6000,
+            title: '#CodeAndCoffee',
+            subject: '',
+            width: 210,
+            height: 240,
+            theme: {
+              shell: {
+                background: '#8ec1da',
+                color: '#ffffff'
+              },
+              tweets: {
+                background: '#ffffff',
+                color: '#444444',
+                links: '#1985b5'
+              }
+            },
+            features: {
+              scrollbar: false,
+              loop: true,
+              live: true,
+              hashtags: true,
+              timestamp: true,
+              avatars: true,
+              toptweets: true,
+              behavior: 'default'
+            }
+          }).render().start();
+
       %div
         %p Code & coffee is an informal get together to write some code Thursday morning. There are no requirements other than the willingness to sit down, pair up, and learn something new. We're going with mornings because the evenings are full enough as it is. Why add to the chaos of user groups, soccer games, and lawn mowing?
         %p If you're interested in joining in, just show up. No invited needed, you don't need to RSVP, you just need a laptop. Coffee not provided, but it's just a few steps away. ;)
@@ -42,3 +75,4 @@
     $("#tabs").tabs();
     $("input:submit").button();
   });
+

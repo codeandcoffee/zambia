@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   end
   
   def list
-    @posts = Post.all
+    @posts = Post.all.desc(:created_at)
     render :partial => "list", :layout => false
   end
 

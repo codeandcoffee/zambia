@@ -7,11 +7,6 @@
     = javascript_include_tag :all
     = csrf_meta_tag 
   %body
-    #login
-      -if current_user
-        Logged in as 
-        = current_user.email
-        =link_to "Log out", log_out_path
     #main.container
       .span-4 &nbsp;
       .span-16.ui-widget-content.ui-corner-all.prepend-top
@@ -24,5 +19,14 @@
           =msg
         = yield
       .span-4.last
-      .span-24.prepend-top.footer copyright &copy; 2011 Code and Coffee
+      .span-24.prepend-top.footer 
+        copyright &copy; 2011 Code and Coffee&nbsp;&nbsp;&nbsp;&nbsp;
+        [
+        -if current_user
+          Logged in as 
+          = current_user.email
+          =link_to "Log out", log_out_path
+        -else
+          =link_to "Log in", log_in_path
+        ]
     

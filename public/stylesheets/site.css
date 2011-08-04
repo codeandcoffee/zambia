@@ -45,9 +45,16 @@ a:hover, a:active
 
 .home-callout
 {
-  border: solid 1px #665d51; 
-  background-color: #dff5ab; 
-  padding: 4px;
+  height: 340px;
+  padding-right: 18px;
+}
+
+.location-item
+{
+  background-color: #fff;
+  margin: 4px 0 16px 0;
+  padding: 8px;
+  border: 1px solid #9bbac3;
 }
 
 .form-list{
@@ -86,8 +93,21 @@ a:hover, a:active
 }
 
 .post-list {
-	list-style: none;
+  
 }
+
+.one-post {
+  margin: 24px 0 12px 0;
+  border-bottom: solid 1px #ddd
+}
+
+.one-post .title{
+  color: #665d51;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+
 
 .name{
 	font-weight: bold;

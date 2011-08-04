@@ -13,6 +13,8 @@ describe Location do
   it { should have_field(:time) }
   
   it { should validate_presence_of(:name) }
+  
+  it { should validate_format_of(:email_address) }
 
   describe "when checking if the location has a good address" do
     it 'should be falls when new' do
