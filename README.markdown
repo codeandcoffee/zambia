@@ -7,3 +7,4 @@ Code and Coffee is an informal get together with the idea of getting out of bed 
 Its grassroots beginnings started in Columbus, OH and the Code and Coffee movement has since spread via Twitter to other cities, such as Cincinnati, Indianapolis and South Bend.
 
 For more info: http://www.codeandcoffee.info
+
