@@ -19,7 +19,7 @@ class LocationController < ApplicationController
   
   #GET /location/edit
   def edit
-    @location = Location.find(:first, :conditions => { :name => params[:id] })
+    @location = Location.find(params[:id])
   end
   
   #POST /location/create
@@ -35,7 +35,7 @@ class LocationController < ApplicationController
   
   #PUT /location/update
   def update
-    @location = Location.find(:first, :conditions => { :name => params[:id] })
+    @location = Location.find(params[:id])
     
     if (@location.update_attributes(params[:location]))
       redirect_to :action => "index"
