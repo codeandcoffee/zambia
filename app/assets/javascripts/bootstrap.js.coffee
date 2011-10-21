@@ -4,5 +4,6 @@
   extend.noConflict()
 
   $ ->
-    new T.inquiry.View(model: new T.inquiry.Model()).render()
+    v = new T.inquiry.View(model: new T.inquiry.Model()).render()
+    $('body').append(v.el)
 )()
