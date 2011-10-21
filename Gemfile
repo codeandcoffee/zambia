@@ -18,6 +18,9 @@ end
 
 gem 'jquery-rails'
 
+gem "compass", '~> 0.11.5'
+gem 'compass_twitter_bootstrap', '~> 0.1.7'
+
 group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
