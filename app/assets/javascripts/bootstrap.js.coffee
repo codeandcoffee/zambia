@@ -4,5 +4,5 @@
   extend.noConflict()
 
   $ ->
-    T.inquiry.View(model: T.inquiry.Model()).render()
+    new T.inquiry.View(model: new T.inquiry.Model()).render()
 )()
