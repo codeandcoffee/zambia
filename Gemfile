@@ -36,10 +36,9 @@ group :development, :test do
   gem 'guard-cucumber'
   gem 'guard-jasmine-headless-webkit'
 
-  group :darwin do
-    gem 'growl_notify'
-    gem 'rb-fsevent'
-  end
+  #hope you're on a mac.
+  gem 'growl_notify'
+  gem 'rb-fsevent'
 end
 
 
