@@ -18,6 +18,29 @@ end
 
 gem 'jquery-rails'
 
+group :development, :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'cucumber'
+  gem 'cucumber-rails'
+
+  gem 'jasmine-rails'
+  gem 'jasmine-headless-webkit'
+
+  gem 'guard-rails-assets'
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  gem 'guard-jasmine-headless-webkit'
+
+  group :darwin do
+    gem 'growl_notify'
+    gem 'rb-fsevent'
+  end
+end
+
+
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
