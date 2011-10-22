@@ -3,7 +3,8 @@
   extend.myNamespace(testDouble)
   extend.noConflict()
 
-  # $ ->
-  #   v = new T.inquiry.View(model: new T.inquiry.Model()).render()
-  #   $('body').append(v.el)
+  $ ->
+    $.getJSON '/inquiries', (inquiries) ->
+      window.router = new TestDouble.Routers.InquiriesRouter({inquiries: inquiries});
+      Backbone.history.start();
 )()
