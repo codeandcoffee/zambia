@@ -14,7 +14,7 @@
         <option>a large business</option>
       </select>
       , and I'd like to
-      <select class="large" name="inquiryType">
+      <select class="large" name="category">
         <option>build an application</option>
         <option>receive training</option>
         <option>talk about something else</option>
@@ -47,7 +47,7 @@
 
     <div class="receive-training clearfix">
       I'd like
-      <select class="small" name="trainingOpenness">
+      <select class="small" name="trainingFormat">
         <option>private</option>
         <option>public</option>
       </select>
