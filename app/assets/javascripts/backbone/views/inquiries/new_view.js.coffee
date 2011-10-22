@@ -26,7 +26,7 @@ class TestDouble.Views.Inquiries.NewView extends Backbone.View
         window.location.hash = "/#{@model.id}"
 
       error: (inquiry, jqXHR) =>
-        @model.set({errors: jqXHR.responseText})
+        @model.set({errors: $.parseJSON(jqXHR.responseText) })
     )
 
   render: ->
