@@ -7,6 +7,10 @@ class Inquiry < ActiveRecord::Base
     super underscore_keys(new_attributes)
   end
 
+  def serializable_hash(options = nil)
+    Hash[super(options).map { |k,v| [k.to_s.camelize.uncapitalize,v] }]
+  end
+
   private
 
   def underscore_keys(hash)
