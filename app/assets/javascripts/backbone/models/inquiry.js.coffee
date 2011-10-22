@@ -10,7 +10,7 @@ class TestDouble.Models.Inquiry extends Backbone.Model
     applicationContract: null
     trainingFormat: null
     trainingTopic: null
-    trainingGroup_size: null
+    trainingGroupSize: null
     discussionTopic: null
     phone: null
     email: null

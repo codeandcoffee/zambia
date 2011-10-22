@@ -3,7 +3,7 @@
   extend.myNamespace(testDouble)
   extend.noConflict()
 
-  $ ->
-    v = new T.inquiry.View(model: new T.inquiry.Model()).render()
-    $('body').append(v.el)
+  # $ ->
+  #   v = new T.inquiry.View(model: new T.inquiry.Model()).render()
+  #   $('body').append(v.el)
 )()

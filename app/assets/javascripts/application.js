@@ -6,4 +6,5 @@
 //
 //= require vendor
 //= require bootstrap
+//= require backbone/test_double
 //= require_tree .
