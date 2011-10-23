@@ -4,12 +4,12 @@ class TestDouble.Views.InquiryView extends Backbone.View
   template: JST["backbone/templates/inquiry"]
 
   events:
-    "click .send": "save"
+    "click .send": "save",
+    'change :input[name="category"]': "renderCurrentCategory"
 
-  constructor: (options) ->
-    super(options)
+  initialize: ->
     @model = new @collection.model()
-    @model.bind "change:errors", () => this.render()
+    @model.bind "change:errors", () => @render()
 
   save: (e) ->
     e.preventDefault()
@@ -26,9 +26,18 @@ class TestDouble.Views.InquiryView extends Backbone.View
         @model.set({errors: $.parseJSON(jqXHR.responseText) })
 
   render: ->
-    $(this.el).html(@template(@model.toJSON()))
-    this.$("form").backboneLink(@model)
+    $(@el).html(@template(@model.toJSON()))
+    @$("form").backboneLink(@model)
+    @renderCurrentCategory()
     @
+
+  renderCurrentCategory: ->
+    selectedClass = @$(':input[name="category"] :selected').attr('class')
+    @$('.category').each (i,el) ->
+      $el = $(el)
+      shouldShow = $el.hasClass(selectedClass)
+      $el.toggleClass('hidden',!shouldShow)
+
 
   #private
 
@@ -44,7 +53,7 @@ class TestDouble.Views.InquiryView extends Backbone.View
         s += $el.val() || "__[#{$el.attr('name')}]__" unless $el.is('button')
       else
         s += @printForm $el
-    ,this
+    ,@
     s
 
   textNode: (el) ->
