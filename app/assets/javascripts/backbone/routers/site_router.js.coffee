@@ -1,13 +1,15 @@
 class TestDouble.Routers.SiteRouter extends Backbone.Router
   initialize: (options) ->
+    $('.navigation').html(new TestDouble.Views.NavigationView().render())
 
   routes:
-    "/inquiry": "inquiry"
-    ".*": "index"
+    "inquiry": "inquiry"
+    ".*": "welcome"
 
   inquiry: ->
     @view = new TestDouble.Views.InquiryView({collection: new TestDouble.Collections.InquiriesCollection()})
-    $("#inquiries").html(@view.render().el)
+    $(".main").html(@view.render().el)
 
-  index: ->
-    $('body').html('o hai!')
+  welcome: ->
+    @view = new TestDouble.Views.WelcomeView()
+    $(".main").html(@view.render().el)
