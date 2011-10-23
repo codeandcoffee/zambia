@@ -1,6 +1,6 @@
 <form class="inquiry-form">
   <fieldset>
-    <div>Ahoy!</div>
+    <div class="clearfix">Ahoy!</div>
 
     <div class="introduction clearfix">
       My name is
