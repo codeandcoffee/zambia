@@ -63,4 +63,5 @@ TestDouble::Application.routes.draw do
 
   root :to => 'site#index'
 
+  match '*path', :to => 'backbone#hashify_path'
 end
