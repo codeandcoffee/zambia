@@ -1,8 +1,8 @@
 <form class="inquiry-form">
   <fieldset>
+    <div>Ahoy!</div>
+
     <div class="introduction clearfix">
-      Ahoy!
-      <br/>
       My name is
       <input class="medium" name="name" size="12" type="text" placeholder="John Smith">
       . I represent
@@ -19,6 +19,7 @@
         <option>receive training</option>
         <option>talk about something else</option>
       </select>
+      .
     </div>
 
     <div class="create-an-application clearfix">
@@ -43,15 +44,16 @@
         <option>you may resell the app (lowest rates)</option>
         <option>we make some other arrangement</option>
       </select>
+      .
     </div>
 
     <div class="receive-training clearfix">
-      I'd like
+      I'm interested in a
       <select class="small" name="trainingFormat">
         <option>private</option>
         <option>public</option>
       </select>
-      training that covers
+      training event that covers
       <input class="medium" name="trainingTopic" size="20" type="text" placeholder="topics A, B, & C">
       for a group of
       <select class="small" name="trainingGroupSize">
@@ -59,6 +61,7 @@
         <option>7-15</option>
         <option>16-30</option>
       </select>
+      .
     </div>
 
     <div class="talk-about-something-else clearfix">
@@ -77,6 +80,7 @@
         <option>phone</option>
         <option>e-mail</option>
       </select>
+      .
     </div>
 
     <div class="actions">

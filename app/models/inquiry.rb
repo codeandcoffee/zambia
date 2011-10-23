@@ -1,4 +1,6 @@
 class Inquiry < ActiveRecord::Base
+  attr_accessor :full_inquiry_text
+
   def initialize(attributes = nil, options = {})
     super(underscore_keys(attributes), options)
   end
