@@ -4,10 +4,13 @@ class TestDouble.Routers.SiteRouter extends Backbone.Router
 
   routes:
     "inquiry": "inquiry"
+    "inquiry/:category": "inquiry"
     ".*": "welcome"
 
-  inquiry: ->
-    @view = new TestDouble.Views.InquiryView({collection: new TestDouble.Collections.InquiriesCollection()})
+  inquiry: (category = "") ->
+    @view = new TestDouble.Views.InquiryView({
+      collection: new TestDouble.Collections.InquiriesCollection(),
+      model: new TestDouble.Models.Inquiry(category: category.replace(/\-/g,' ') )})
     $(".main").html(@view.render().el)
 
   welcome: ->

@@ -1,7 +1,7 @@
 <div class="inquiry-form-wrap">
   <form class="inquiry-form">
     <fieldset>
-      <div class="clearfix">Ahoy!</div>
+      <div class="clearfix">Greetings!</div>
 
       <div class="introduction clearfix">
         My name is
@@ -10,20 +10,21 @@
         <select class="medium" name="businessType">
           <option>myself</option>
           <option>a startup</option>
-          <option>a small business</option>
+          <option selected>a small business</option>
           <option>a mid-size business</option>
           <option>a large business</option>
         </select>
         , and I'd like to
         <select class="large" name="category">
-          <option class="create-an-application">build an application</option>
-          <option class="receive-training">receive training</option>
-          <option class="talk-about-something-else">talk about something else</option>
+          <% currentCategory = @model.get 'category'%>
+          <% _(@view.categories).each (category) ->: %>
+          <option class="<%= _(category).dasherize() %>" <%= if currentCategory == category then "selected" else "" %>><%= category %></option>
+          <% end %>
         </select>
         .
       </div>
 
-      <div class="category create-an-application clearfix">
+      <div class="category <%= _(@view.categories[0]).dasherize() %> clearfix">
         It's a
         <select class="small" name="applicationType">
           <option>web</option>
@@ -34,7 +35,7 @@
         app with a budget under
         <select class="small" name="applicationBudget">
           <option>$30,000</option>
-          <option>$80,000</option>
+          <option selected>$80,000</option>
           <option>$200,000</option>
           <option>TBD</option>
         </select>
@@ -48,14 +49,14 @@
         .
       </div>
 
-      <div class="category receive-training clearfix">
+      <div class="category <%= _(@view.categories[1]).dasherize() %> clearfix">
         I'm interested in a
         <select class="small" name="trainingFormat">
           <option>private</option>
           <option>public</option>
         </select>
         training event that covers
-        <input class="medium" name="trainingTopic" size="20" type="text" placeholder="topics A, B, & C">
+        <input class="large" name="trainingTopic" size="20" type="text" placeholder="topics A, B, & C">
         for a group of
         <select class="small" name="trainingGroupSize">
           <option>1 - 6</option>
@@ -65,10 +66,12 @@
         .
       </div>
 
-      <div class="category talk-about-something-else clearfix">
+      <div class="category <%= _(@view.categories[2]).dasherize() %> clearfix">
         I'd like to discuss:
         <br/>
-        <textarea class="xxlarge" name="discussionTopic" rows="3"></textarea>
+        <div class="textarea">
+          <textarea class="xxlarge" name="discussionTopic" rows="3"></textarea>
+        </div>
       </div>
 
       <div class="contact-info clearfix">
@@ -84,7 +87,9 @@
         .
       </div>
 
-      <button type="submit" class="btn primary send">Contact us! :-)</button>
+      <div class="buttons">
+      <button type="submit" class="btn primary send">Send</button>
+      </div>
     </fieldset>
   </form>
 </div>

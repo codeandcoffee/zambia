@@ -3,12 +3,18 @@ TestDouble.Views.Inquiries ||= {}
 class TestDouble.Views.InquiryView extends Backbone.View
   template: JST["backbone/templates/inquiry"]
 
+  categories: [
+    "build an application",
+    "receive training",
+    "talk about something else"
+  ]
+
   events:
     "click .send": "save",
-    'change :input[name="category"]': "renderCurrentCategory"
+    'change :input[name="category"]': "showSelectedCategory"
 
   initialize: ->
-    @model = new @collection.model()
+    @hash = window.location.hash
     @model.bind "change:errors", () => @render()
 
   save: (e) ->
@@ -26,18 +32,15 @@ class TestDouble.Views.InquiryView extends Backbone.View
         @model.set({errors: $.parseJSON(jqXHR.responseText) })
 
   render: ->
-    $(@el).html(@template(@model.toJSON()))
+    $(@el).html(@template({model: @model, view: @}))
     @$("form").backboneLink(@model)
-    @renderCurrentCategory()
+    @showSelectedCategory()
     @
 
-  renderCurrentCategory: ->
+  showSelectedCategory: ->
     selectedClass = @$(':input[name="category"] :selected').attr('class')
-    @$('.category').each (i,el) ->
-      $el = $(el)
-      shouldShow = $el.hasClass(selectedClass)
-      $el.toggleClass('hidden',!shouldShow)
-
+    window.location.hash = 'inquiry/' + selectedClass
+    @$('.category').each (i,el) -> $(el).toggleClass('hidden',!$(el).hasClass(selectedClass))
 
   #private
 
