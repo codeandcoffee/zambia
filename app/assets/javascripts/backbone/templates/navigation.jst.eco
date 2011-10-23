@@ -1,0 +1,7 @@
+<nav>
+  <ul>
+    <% _(@links).each (title,path) ->: %>
+      <li><a href="<%=path%>"><%= title %></a></li>
+    <% end %>
+  </ul>
+</nav>

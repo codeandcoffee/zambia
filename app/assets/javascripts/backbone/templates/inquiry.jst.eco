@@ -1,0 +1,86 @@
+<form class="inquiry-form">
+  <fieldset>
+    <div class="introduction clearfix">
+      Ahoy!
+      <br/>
+      My name is
+      <input class="medium" name="name" size="12" type="text" placeholder="John Smith">
+      . I represent
+      <select class="medium" name="businessType">
+        <option>myself</option>
+        <option>a startup</option>
+        <option>a small business</option>
+        <option>a mid-size business</option>
+        <option>a large business</option>
+      </select>
+      , and I'd like to
+      <select class="large" name="category">
+        <option>build an application</option>
+        <option>receive training</option>
+        <option>talk about something else</option>
+      </select>
+    </div>
+
+    <div class="create-an-application clearfix">
+      It's a
+      <select class="small" name="applicationType">
+        <option>web</option>
+        <option>mobile</option>
+        <option>desktop</option>
+        <option>complex</option>
+      </select>
+      app, and I'm planning to spend less than
+      <select class="small" name="applicationBudget">
+        <option>$30,000</option>
+        <option>$80,000</option>
+        <option>$200,000</option>
+        <option>TBD</option>
+      </select>
+      . Also, I'd prefer terms in which
+      <select class="xlarge" name="applicationContract">
+        <option>I own the app's IP (highest rates)</option>
+        <option>we share revenue (lower rates)</option>
+        <option>you may resell the app (lowest rates)</option>
+        <option>we make some other arrangement</option>
+      </select>
+    </div>
+
+    <div class="receive-training clearfix">
+      I'd like
+      <select class="small" name="trainingFormat">
+        <option>private</option>
+        <option>public</option>
+      </select>
+      training that covers
+      <input class="medium" name="trainingTopic" size="20" type="text" placeholder="topics A, B, & C">
+      for a group of
+      <select class="small" name="trainingGroupSize">
+        <option>1-6</option>
+        <option>7-15</option>
+        <option>16-30</option>
+      </select>
+    </div>
+
+    <div class="talk-about-something-else clearfix">
+      I'd like to discuss
+      <br/>
+      <textarea class="xxlarge" name="discussionTopic" rows="3"></textarea>
+    </div>
+
+    <div class="contact-info clearfix">
+      My phone number is
+      <input class="small" name="phone" size="12" type="text" placeholder="123-456-7890">
+      and my e-mail is
+      <input class="medium" name="email" size="16" type="text" placeholder="jsmith@gmail.com">
+      , but I'd prefer to be contacted by
+      <select class="small" name="contactPreference">
+        <option>phone</option>
+        <option>e-mail</option>
+      </select>
+    </div>
+
+    <div class="actions">
+      <button type="submit" class="btn primary send">Contact us! :-)</button>&nbsp;<button type="reset" class="btn">Don't contact us :-(</button>
+    </div>
+  </fieldset>
+</form>

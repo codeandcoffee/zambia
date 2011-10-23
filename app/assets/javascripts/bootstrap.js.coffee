@@ -1,9 +1,3 @@
-(->
-  T = window.testDouble = window.testDouble || {}
-  extend.myNamespace(testDouble)
-  extend.noConflict()
-
-  $ ->
-    v = new T.inquiry.View(model: new T.inquiry.Model()).render()
-    $('body').append(v.el)
-)()
+$ ->
+  window.router = new TestDouble.Routers.SiteRouter();
+  Backbone.history.start();
