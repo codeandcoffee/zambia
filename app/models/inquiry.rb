@@ -1,10 +1,10 @@
 class Inquiry < ActiveRecord::Base
   def initialize(attributes = nil, options = {})
-    super underscore_keys(attributes), options
+    super(underscore_keys(attributes), options)
   end
 
-  def attributes=(new_attributes,guard_protected_attributes=nil)
-    super underscore_keys(new_attributes)
+  def attributes=(new_attributes, guard_protected_attributes=nil)
+    super(underscore_keys(new_attributes, guard_protected_attributes))
   end
 
   def serializable_hash(options = nil)
