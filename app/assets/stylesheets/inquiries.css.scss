@@ -2,8 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@mixin drop-shadow {
+  -webkit-box-shadow: #666 4px 4px 1px;
+  -moz-box-shadow: #666 4px 4px 1px;
+  box-shadow: #666 4px 4px 1px;
+  behavior: url(/PIE/PIE.htc);
+}
+
 .inquiry-form-wrap {
   padding: 5px;
   border: 1px solid #999;
   background: #fff;
+  @include drop-shadow;
+
+  .textarea {
+    text-align: center;
+
+    textarea {
+      margin-top: 10px;
+      width: 90%;
+    }
+  }
+
+  .buttons {
+    text-align: right;
+    margin: 30px 20px 0px 0px;
+  }
 }
+
