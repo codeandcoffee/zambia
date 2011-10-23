@@ -21,7 +21,6 @@ class TestDouble.Views.InquiryView extends Backbone.View
     @collection.create @model.toJSON(),
       success: (inquiry) =>
         @model = inquiry
-        # window.location.hash = "/#{@model.id}"
 
       error: (inquiry, jqXHR) =>
         @model.set({errors: $.parseJSON(jqXHR.responseText) })
