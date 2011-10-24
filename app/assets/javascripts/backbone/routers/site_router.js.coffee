@@ -8,14 +8,13 @@ class TestDouble.Routers.SiteRouter extends Backbone.Router
     ".*": "welcome"
 
   inquiry: (category = "") ->
-    if !@inquiryView
-      @inquiryView = new TestDouble.Views.InquiryView
-        el: $('.main')
-        collection: new TestDouble.Collections.InquiriesCollection(),
-        model: new TestDouble.Models.Inquiry(category: category.replace(/\-/g,' '))
-      @inquiryView.render()
-    # $(".main").html(@inquiryView.el)
+    @inquiryView ||= new TestDouble.Views.InquiryView
+      el: $('.main')
+      collection: new TestDouble.Collections.InquiriesCollection(),
+      model: new TestDouble.Models.Inquiry(category: category.replace(/\-/g,' '))
+    @inquiryView.render()
 
   welcome: ->
-    @view = new TestDouble.Views.WelcomeView()
-    $(".main").html(@view.render().el)
+    @welcomeView ||= new TestDouble.Views.WelcomeView
+      el: $('.main')
+    @welcomeView.render()
