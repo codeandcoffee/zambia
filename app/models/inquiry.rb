@@ -5,6 +5,10 @@ class Inquiry < ActiveRecord::Base
     super(underscore_keys(attributes), options)
   end
 
+  def update_attributes(attributes = nil)
+    super(underscore_keys(attributes))
+  end
+
   def attributes=(new_attributes, guard_protected_attributes=nil)
     super(underscore_keys(new_attributes, guard_protected_attributes))
   end

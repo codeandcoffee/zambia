@@ -16,5 +16,16 @@ class InquiriesController < ApplicationController
     end
   end
 
+  def update
+    @inquiry = Inquiry.find(params[:id])
+
+    if @inquiry.update_attributes(params[:inquiry])
+      InquiryMailer.inquiry_email(@inquiry).deliver
+      respond_with nil, status: :no_content
+    else
+      respond_with @inquiry.errors, status: :unprocessable_entity
+    end
+  end
+
 end
 
