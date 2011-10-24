@@ -6,7 +6,7 @@ class TestDouble.Views.InquiryView extends Backbone.View
   categories: [
     "build an application",
     "receive training",
-    "talk about something else"
+    "talk with you"
   ]
 
   events:

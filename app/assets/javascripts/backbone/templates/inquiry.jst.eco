@@ -1,7 +1,7 @@
 <div class="inquiry-form-wrap">
   <form class="inquiry-form">
     <fieldset>
-      <div class="clearfix">Greetings!</div>
+      <div class="clearfix">Greetings,</div>
 
       <div class="introduction clearfix">
         My name is
@@ -15,7 +15,7 @@
           <option>a large business</option>
         </select>
         , and I'd like to
-        <select class="large" name="category">
+        <select class="medium" name="category">
           <% currentCategory = @model.get 'category'%>
           <% _(@view.categories).each (category) ->: %>
           <option class="<%= _(category).dasherize() %>" <%= if currentCategory == category then "selected" else "" %>><%= category %></option>
