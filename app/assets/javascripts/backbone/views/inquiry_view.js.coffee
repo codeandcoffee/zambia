@@ -10,8 +10,10 @@ class TestDouble.Views.InquiryView extends Backbone.View
   ]
 
   events:
-    "click .send": "save",
+    "click .send": "save"
+    "submit *": "save"
     'change :input[name="category"]': "showSelectedCategory"
+    'change :input': 'propogateChangesToModel'
 
   initialize: ->
     @hash = window.location.hash
@@ -33,9 +35,27 @@ class TestDouble.Views.InquiryView extends Backbone.View
 
   render: ->
     $(@el).html(@template({model: @model, view: @}))
-    @$("form").backboneLink(@model)
+    @syncForm(@$('form'),@model)
     @showSelectedCategory()
     @
+
+  syncForm: ($form,model)->
+    self = @
+    $form.find(':input[name]').each (i,el) ->
+      $el = $(el);
+      name = $el.attr('name')
+      model.bind 'change:'+name, -> $el.val(model.get(name))
+      if model.get(name)
+        $el.val(model.get(name))
+      else
+        self.propogateChangesToModel target: el
+
+  propogateChangesToModel: (e) ->
+    $el = $(e.target)
+    attrs = {}
+    attrs[$el.attr('name')] = $el.val()
+    @model.set attrs
+
 
   showSelectedCategory: ->
     selectedClass = @$(':input[name="category"] :selected').attr('class')
@@ -64,3 +84,5 @@ class TestDouble.Views.InquiryView extends Backbone.View
 
   padIfAlphabetic: (content) =>
     if content.match(/^[A-z]/) then ' ' else ''
+
+
