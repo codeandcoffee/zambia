@@ -40,6 +40,8 @@ class TestDouble.Views.FormView extends Backbone.View
     s = ""
     _($root.contents()).each (el) ->
       $el = $(el)
+      return unless $(el).is(':visible')
+
       s += '\n\n' if $el.is('div')
       if @textNode(el)
         text = _(el.textContent).clean()
