@@ -16,7 +16,6 @@ class TestDouble.Views.InquiryView extends Backbone.View
     'change :input': 'propogateChangesToModel'
 
   initialize: ->
-    @hash = window.location.hash
     @model.bind "change:errors", () => @render()
 
   save: (e) ->
