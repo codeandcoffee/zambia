@@ -1,7 +1,4 @@
 class TestDouble.Routers.SiteRouter extends Backbone.Router
-  initialize: (options) ->
-    $('.navigation').html(new TestDouble.Views.NavigationView().render())
-
   routes:
     "inquiry": "inquiry"
     "inquiry/:category": "inquiry"
