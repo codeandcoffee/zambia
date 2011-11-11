@@ -39,8 +39,8 @@ class TestDouble.Views.FormView extends Backbone.View
   printForm: ($root) =>
     s = ""
     _($root.contents()).each (el) ->
+      return if @hidden(el)
       $el = $(el)
-      return unless $(el).is(':visible')
 
       s += '\n\n' if $el.is('div')
       if @textNode(el)
@@ -54,6 +54,12 @@ class TestDouble.Views.FormView extends Backbone.View
     s
 
   #private
+
+  hidden: (el) ->
+    if @textNode(el)
+      $(el).parent().is(':hidden')
+    else
+      $(el).is(':hidden')
 
   textNode: (el) ->
     el.nodeType == 3
