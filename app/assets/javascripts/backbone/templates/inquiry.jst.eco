@@ -79,7 +79,7 @@
         <input class="small" name="phone" size="12" type="text" placeholder="123-456-7890">
         and my e-mail is
         <input class="medium" name="email" size="16" type="text" placeholder="jsmith@gmail.com">
-        , but I'd prefer to be contacted by
+        . I'd prefer to be contacted by
         <select class="small" name="contactPreference">
           <option>phone</option>
           <option>e-mail</option>
