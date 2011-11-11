@@ -1,0 +1,5 @@
+<div class="alert-message success fade in" data-alert>
+  <a class="close" href="#">×</a>
+  <%= console.log @ %>
+  <p><strong>Thank you<%= ", #{@name}" if @name %>! We'll be in touch soon!</strong></p>
+</div>

@@ -18,11 +18,18 @@ class TestDouble.Views.InquiryView extends TestDouble.Views.FormView
       'click .cancel': 'cancel'
 
   initialize: ->
+    _(@).bindAll()
+    @collection.bind "add", @afterSending
     @model.bind "change:errors", () => @render()
 
   save: (e) ->
     @model.set fullInquiryText: @printForm(@$('form'))
     super e
+
+  afterSending: =>
+    @cancel()
+    $alert = $(JST['backbone/templates/inquiry_alert_success'](@model.toJSON())).prependTo('body');
+    $alert.alert().delay(6000).slideUp(800);
 
   render: ->
     $(@el).html(@template({model: @model, view: @}))
