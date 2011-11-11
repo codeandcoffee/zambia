@@ -19,10 +19,10 @@ group :assets do
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'eco'
-end
 
-gem 'jquery-rails'
-gem 'rails-backbone'
+  gem 'jquery-rails'
+  gem 'rails-backbone'
+end
 
 group :development, :test do
   gem 'rspec'
@@ -39,9 +39,10 @@ group :development, :test do
   gem 'guard-cucumber'
   gem 'guard-jasmine-headless-webkit'
 
-  #hope you're on a mac.
-  gem 'growl_notify'
-  gem 'rb-fsevent'
+  if RUBY_PLATFORM =~ /darwin/
+    gem 'growl_notify'
+    gem 'rb-fsevent'
+  end
 end
 
 
