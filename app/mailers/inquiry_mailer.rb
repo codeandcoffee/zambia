@@ -3,6 +3,6 @@ class InquiryMailer < ActionMailer::Base
 
   def inquiry_email(inquiry)
     @inquiry = inquiry
-    mail(:to => "searls+testdouble@gmail.com", :subject => "New inquiry!")
+    mail(:to => "searls+testdouble@gmail.com,toddkaufman+testdouble@gmail.com", :subject => "New test double inquiry!")
   end
 end
