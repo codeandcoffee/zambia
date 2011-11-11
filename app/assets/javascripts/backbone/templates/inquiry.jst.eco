@@ -88,7 +88,8 @@
       </div>
 
       <div class="buttons">
-      <button type="submit" class="btn primary send">Send</button>
+        <button type="button" class="cancel btn danger">cancel</button>
+        <button type="submit" class="send btn primary">send</button>
       </div>
     </fieldset>
   </form>

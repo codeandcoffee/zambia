@@ -15,6 +15,7 @@ class TestDouble.Views.InquiryView extends TestDouble.Views.FormView
       "submit *": "save"
       'change :input[name="category"]': "showSelectedCategory"
       'change :input': 'propogateChangesToModel'
+      'click .cancel': 'cancel'
 
   initialize: ->
     @model.bind "change:errors", () => @render()
@@ -31,7 +32,8 @@ class TestDouble.Views.InquiryView extends TestDouble.Views.FormView
 
   showSelectedCategory: ->
     selectedClass = @$(':input[name="category"] :selected').attr('class')
-    window.location.hash = 'inquiry/' + selectedClass
+    window.router.navigate('inquiry/' + selectedClass)
     @$('.category').each (i,el) -> $(el).toggleClass('hidden',!$(el).hasClass(selectedClass))
 
-
+  cancel: ->
+    window.router.navigate '', true
