@@ -44,7 +44,7 @@ class TestDouble.Views.FormView extends Backbone.View
 
       s += '\n\n' if $el.is('div')
       if @textNode(el)
-        text = _(el.textContent).clean()
+        text = _($(el).text()).clean()
         s += @padIfAlphabetic(text) + text + ' '
       else if $el.is(':input')
         s += $el.val() || "__[#{$el.attr('name')}]__" unless $el.is('button')
