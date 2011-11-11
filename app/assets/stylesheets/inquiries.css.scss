@@ -9,28 +9,37 @@
   behavior: url(/PIE/PIE.htc);
 }
 
-.inquiry-form-wrap {
-  padding: 10px;
-  border: 1px solid #999;
-  background: #fff;
-  @include drop-shadow;
+#contactUs {
+  position: fixed;
+  width: 840px;
+  min-height: 250px;
+  left: 50%;
+  top: 208px;
+  margin: 0px 0px 0px -420px;
 
-  .textarea {
-    text-align: center;
+  .inquiry-form-wrap {
+    padding: 10px;
 
-    textarea {
-      margin-top: 10px;
-      width: 90%;
+    .textarea {
+      text-align: center;
+
+      textarea {
+        margin-top: 10px;
+        width: 90%;
+      }
+    }
+
+    .buttons {
+      text-align: right;
+      margin: 30px 20px 0px 0px;
+
+      .btn {
+        margin-left: 10px;
+      }
     }
   }
 
-  .buttons {
-    text-align: right;
-    margin: 30px 20px 0px 0px;
 
-    .btn {
-      margin-left: 15px;
-    }
-  }
+
 }
 

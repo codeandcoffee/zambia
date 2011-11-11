@@ -23,7 +23,7 @@ class TestDouble.Views.InquiryView extends TestDouble.Views.FormView
 
   save: (e) ->
     @model.set fullInquiryText: @printForm(@$('form'))
-    @$('.send').attr('disabled','disabled').val('sending..')
+    @$('.send').attr('disabled','disabled').val('contacting...')
     super e
 
   afterSending: =>
@@ -32,7 +32,7 @@ class TestDouble.Views.InquiryView extends TestDouble.Views.FormView
     $alert.alert().delay(6000).slideUp(800);
 
   render: ->
-    $(@el).html(@template({model: @model, view: @}))
+    $(@el).html(@template({model: @model, view: @})).fadeIn(500)
     super
     @showSelectedCategory()
     @
@@ -43,4 +43,5 @@ class TestDouble.Views.InquiryView extends TestDouble.Views.FormView
     @$('.category').each (i,el) -> $(el).toggleClass('hidden',!$(el).hasClass(selectedClass))
 
   cancel: ->
+    $(@el).fadeOut(300)
     window.router.navigate '', true
