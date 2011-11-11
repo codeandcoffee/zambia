@@ -11,7 +11,6 @@ class TestDouble.Views.InquiryView extends TestDouble.Views.FormView
 
   events: ->
     _.extend {}, super,
-      "click .send": "save"
       "submit *": "save"
       'change :input[name="category"]': "showSelectedCategory"
       'change :input': 'propogateChangesToModel'
@@ -24,6 +23,7 @@ class TestDouble.Views.InquiryView extends TestDouble.Views.FormView
 
   save: (e) ->
     @model.set fullInquiryText: @printForm(@$('form'))
+    @$('.send').attr('disabled','disabled').val('sending..')
     super e
 
   afterSending: =>
