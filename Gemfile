@@ -25,11 +25,13 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'ruby-debug19'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'cucumber'
   gem 'cucumber-rails'
+  gem 'capybara-webkit'
 
   gem 'jasmine-headless-webkit'
 
