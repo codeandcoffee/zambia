@@ -1,7 +1,5 @@
 src_files:
-  - "vendor/**/*.{js,coffee}"
-  - "lib/**/*.{js,coffee}"
-  - "app/**/*.{js,coffee}"
+  - "public/assets/application.js"
 
 stylesheets:
   - "vendor/**/*.css"

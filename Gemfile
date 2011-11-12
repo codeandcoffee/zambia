@@ -31,7 +31,6 @@ group :development, :test do
   gem 'cucumber'
   gem 'cucumber-rails'
 
-  gem 'jasmine-rails'
   gem 'jasmine-headless-webkit'
 
   gem 'guard-rails-assets'

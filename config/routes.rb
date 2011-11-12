@@ -58,9 +58,6 @@ TestDouble::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 
-
-  mount JasmineRails::Engine => "/specs" unless Rails.env.production?
-
   root :to => 'site#index'
 
   match '*path', :to => 'backbone#hashify_path'
