@@ -40,10 +40,8 @@ group :development, :test do
   gem 'guard-cucumber'
   gem 'guard-jasmine-headless-webkit'
 
-  if RUBY_PLATFORM =~ /darwin/
-    gem 'growl_notify'
-    gem 'rb-fsevent'
-  end
+  gem 'growl_notify'
+  gem 'rb-fsevent'
 end
 
 
