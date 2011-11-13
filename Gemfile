@@ -34,6 +34,7 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'akephalos2', :require => 'akephalos'
 
+  gem 'jasmine-rails'
   gem 'jasmine-headless-webkit'
 
   gem 'guard-rails-assets'
