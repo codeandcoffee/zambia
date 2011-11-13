@@ -15,4 +15,8 @@ Capybara.register_driver :selenium do |app|
  Capybara::Selenium::Driver.new(app, :browser => :chrome)
 end
 
-Capybara.default_driver = :selenium
+if ENV['CAPYBARA_ENV_TYPE'] == 'HEADLESS'
+  Capybara.default_driver = :webkit
+else
+  Capybara.default_driver = :selenium
+end
