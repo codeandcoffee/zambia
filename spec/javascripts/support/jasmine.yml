@@ -1,9 +1,17 @@
 src_files:
+ - "**/prereqs/*"
+ - "spec/javascripts/asset-deps/jquery.min.js"
+ - "spec/javascripts/asset-deps/jquery*"
+ - "spec/javascripts/asset-deps/underscore*"
+ - "spec/javascripts/asset-deps/backbone*"
+ - "spec/javascripts/asset-deps/**/*"
+ - "app/assets/javascripts/bootstrap.js.coffee"
+ - "app/assets/javascripts/backbone/test_double.js.coffee"
+ - "app/assets/javascripts/backbone/models/**/*.coffee"
+ - "app/assets/javascripts/backbone/views/**/*.coffee"
+ - "app/assets/javascripts/backbone/routers/**/*.coffee"
 
 stylesheets:
-  - "vendor/**/*.css"
-  - "lib/**/*.css"
-  - "app/**/*.css"
 
 helpers:
   - "helpers/**/*.{js,coffee}"
