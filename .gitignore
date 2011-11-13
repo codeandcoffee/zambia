@@ -6,3 +6,4 @@ tmp/
 .DS_Store
 public/assets
 .jhw-cache
+chromedriver.log
