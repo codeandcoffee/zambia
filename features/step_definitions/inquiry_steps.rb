@@ -73,17 +73,18 @@ When /^a user contacts us wanting to talk\.$/ do
 end
 
 When /^a user opens the contact form\.$/ do
-  pending # express the regexp above with the code you wish you had
+  contact_us_button.click
 end
 
 When /^then they cancel\.$/ do
-  pending # express the regexp above with the code you wish you had
+  click_button "cancel"
 end
 
-Then /^they're back at the home screen\.$/ do
-  pending # express the regexp above with the code you wish you had
+Then /^they're back at the welcome screen\.$/ do
+  page.should have_no_content "Greetings"
+  page.should have_content "a software studio"
 end
 
 Then /^we don't get an e\-mail about it\.$/ do
-  pending # express the regexp above with the code you wish you had
+  ActionMailer::Base.deliveries.should be_empty
 end
