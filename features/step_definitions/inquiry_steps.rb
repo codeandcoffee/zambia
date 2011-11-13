@@ -15,12 +15,20 @@ def fill_it_out(data = {})
       fill_in name.to_s, :with => value
     when "select"
       select value, :from => name.to_s
+    when "textarea"
+      fill_in name.to_s, :with => value
     end
   end
 end
 
 def contact_us_button
   find('#contactUsButton')
+end
+
+def send_inquiry(data)
+  contact_us_button.click
+  fill_it_out data
+  click_button "contact us"
 end
 
 def wait_up_to(seconds)
@@ -35,11 +43,9 @@ Given /^I'm at the website\.$/ do
 end
 
 When /^a user contacts us wanting an app\.$/ do
-  contact_us_button.click
-  fill_it_out :applicationType => 'mobile',
-              :applicationBudget => '$30,000',
-              :applicationContract => 'you may resell the app (lowest rates)'
-  click_button "contact us"
+  send_inquiry :applicationType => 'mobile',
+               :applicationBudget => '$30,000',
+               :applicationContract => 'you may resell the app (lowest rates)'
 end
 
 Then /^we get an e\-mail about it\.$/ do
@@ -55,11 +61,15 @@ Then /^we get an e\-mail about it\.$/ do
 end
 
 When /^a user contacts us wanting training\.$/ do
-  pending # express the regexp above with the code you wish you had
+  send_inquiry :category => 'receive training',
+               :trainingFormat => 'public',
+               :trainingTopic => 'Backbone, Rails, and COBOL',
+               :trainingGroupSize => '7 - 15'
 end
 
 When /^a user contacts us wanting to talk\.$/ do
-  pending # express the regexp above with the code you wish you had
+  send_inquiry :category => 'talk with you',
+               :discussionTopic => "I'm more than happy to discuss anything at all! Yay!"
 end
 
 When /^a user opens the contact form\.$/ do
