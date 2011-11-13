@@ -43,5 +43,5 @@ class TestDouble.Views.InquiryView extends TestDouble.Views.FormView
     @$('.category').each (i,el) -> $(el).toggleClass('hidden',!$(el).hasClass(selectedClass))
 
   cancel: ->
-    $(@el).fadeOut(300)
+    $(@el).fadeOut(300).html('')
     window.router.navigate '', true

@@ -25,11 +25,6 @@ group :rb do
 end
 
 group :js do
-  guard 'rails-assets' do
-    watch(%r{^app/assets/.+$})
-    watch('config/application.rb')
-  end
-
   spec_location = "spec/javascripts/%s_spec"
   guard 'jasmine-headless-webkit' do
     watch(%r{^app/views/.*\.jst$})
