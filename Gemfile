@@ -32,6 +32,7 @@ group :development, :test do
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'capybara-webkit'
+  gem 'akephalos2', :require => 'akephalos'
 
   gem 'jasmine-headless-webkit'
 

@@ -2,16 +2,14 @@ DATA = {
   :name => 'Joe Beans',
   :businessType => 'a mid-size business',
   :category => 'build an application',
-  :applicationType => 'mobile',
-  :applicationBudget => '$30,000',
-  :applicationContract => 'you may resell the app (lowest rates)',
   :phone => '123-456-7890',
   :email => 'joe@beans.com',
   :contactPreference => 'e-mail'
 }
 
 def fill_it_out(data = {})
-  DATA.merge(data).each do |(name,value)|
+  @inquiry_fields = DATA.merge(data)
+  @inquiry_fields.each do |(name,value)|
     case find("[name=\"#{name}\"]").tag_name
     when "input"
       fill_in name.to_s, :with => value
@@ -21,17 +19,39 @@ def fill_it_out(data = {})
   end
 end
 
+def contact_us_button
+  find('#contactUsButton')
+end
+
+def wait_up_to(seconds)
+  og = Capybara.default_wait_time
+  Capybara.default_wait_time = seconds
+  yield
+  Capybara.default_wait_time = og
+end
+
 Given /^I'm at the website\.$/ do
  visit '/'
 end
 
 When /^a user contacts us wanting an app\.$/ do
-  find('#contactUsButton').click
-  fill_it_out
+  contact_us_button.click
+  fill_it_out :applicationType => 'mobile',
+              :applicationBudget => '$30,000',
+              :applicationContract => 'you may resell the app (lowest rates)'
+  click_button "contact us"
 end
 
 Then /^we get an e\-mail about it\.$/ do
+  wait_up_to(10) { page.should have_no_content 'Greetings' }
 
+  mail = ActionMailer::Base.deliveries.last
+  mail.to.should include "searls+testdouble@gmail.com"
+  mail.to.should include "toddkaufman+testdouble@gmail.com"
+  mail.subject.should == "New test double inquiry!"
+  @inquiry_fields.each do |(name,value)|
+    mail.body.should include value
+  end
 end
 
 When /^a user contacts us wanting training\.$/ do

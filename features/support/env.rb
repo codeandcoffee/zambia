@@ -16,7 +16,7 @@ Capybara.register_driver :selenium do |app|
 end
 
 if ENV['CAPYBARA_ENV_TYPE'] == 'HEADLESS'
-  Capybara.default_driver = :webkit
+  Capybara.javascript_driver = Capybara.default_driver = :akephalos
 else
-  Capybara.default_driver = :selenium
+  Capybara.javascript_driver = Capybara.default_driver = :selenium
 end

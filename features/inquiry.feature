@@ -3,12 +3,11 @@ Feature: a user sends us an inquiry
   Background:
     Given I'm at the website.
 
-  @wip
   Scenario: a user wants an app
     When a user contacts us wanting an app.
     Then we get an e-mail about it.
 
-  @future
+  @wip
   Scenario: a user wants training
     When a user contacts us wanting training.
     Then we get an e-mail about it.
