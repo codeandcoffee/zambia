@@ -1,11 +1,11 @@
 class TestDouble.Views.WelcomeView extends Backbone.View
-  template: JST["backbone/templates/welcome"]()
+  template: JST["backbone/templates/welcome"]
 
-  events: ->
+  events:
     "click #contactUsButton": "contactUs"
 
   render: ->
-    $(this.el).html(@template)
+    $(this.el).html(@template())
     @
 
   contactUs: ->

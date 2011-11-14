@@ -1,3 +1,3 @@
 window.JST = {
-  "backbone/templates/welcome": jasmine.createSpy()
+  "backbone/templates/welcome": function() {}
 };
