@@ -1,5 +1,3 @@
-TestDouble.Views.Inquiries ||= {}
-
 class TestDouble.Views.InquiryView extends TestDouble.Views.FormView
   template: JST["backbone/templates/inquiry"]
 
@@ -17,9 +15,14 @@ class TestDouble.Views.InquiryView extends TestDouble.Views.FormView
       'click .cancel': 'cancel'
 
   initialize: ->
-    _(@).bindAll()
+    _.bindAll @
     @collection.bind "add", @afterSending
-    @model.bind "change:errors", () => @render()
+
+  render: ->
+    $(@el).html(@template({model: @model, view: @})).fadeIn(500)
+    super
+    @showSelectedCategory()
+    @
 
   save: (e) ->
     @model.set fullInquiryText: @printForm(@$('form'))
@@ -31,17 +34,14 @@ class TestDouble.Views.InquiryView extends TestDouble.Views.FormView
     $alert = $(JST['backbone/templates/inquiry_alert_success'](@model.toJSON())).prependTo('body');
     $alert.alert().delay(6000).slideUp(800);
 
-  render: ->
-    $(@el).html(@template({model: @model, view: @})).fadeIn(500)
-    super
-    @showSelectedCategory()
-    @
+  cancel: ->
+    $(@el).fadeOut(300).html('')
+    window.router.navigate '', true
+
+  #private
 
   showSelectedCategory: ->
     selectedClass = @$(':input[name="category"] :selected').attr('class')
     window.router.navigate('inquiry/' + selectedClass)
     @$('.category').each (i,el) -> $(el).toggleClass('hidden',!$(el).hasClass(selectedClass))
 
-  cancel: ->
-    $(@el).fadeOut(300).html('')
-    window.router.navigate '', true

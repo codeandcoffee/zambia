@@ -11,6 +11,5 @@ describe "TestDouble.Views.WelcomeView", ->
     Then -> @result == @subject
 
   describe "#contactUs", ->
-    Given -> fakify(window,"router",jasmine.createSpyObj('router',['navigate']))
     When -> @subject.contactUs()
     Then -> expect(window.router.navigate).toHaveBeenCalledWith('inquiry',true)
