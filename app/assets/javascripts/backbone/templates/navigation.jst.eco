@@ -1,5 +1,0 @@
-<nav class="row">
-  <% _(@links).each (title,path) ->: %>
-    <div class="span5"><a href="<%=path%>"><%= title %></a></div>
-  <% end %>
-</nav>
