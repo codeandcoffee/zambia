@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails', '~> 3.2.1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -15,9 +15,9 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.1.4'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
   gem 'eco'
 
   gem 'jquery-rails'
@@ -25,7 +25,6 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'ruby-debug19'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'database_cleaner'
@@ -42,7 +41,7 @@ group :development, :test do
   gem 'guard-cucumber'
   gem 'guard-jasmine-headless-webkit'
 
-  gem 'growl_notify'
+  gem 'growl'
   gem 'rb-fsevent'
 end
 

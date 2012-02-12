@@ -1,4 +1,3 @@
-require 'ruby-debug'
 require 'cucumber/rails'
 
 Capybara.default_selector = :css
