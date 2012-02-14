@@ -11,7 +11,7 @@ class TestDouble.Views.FormView extends Backbone.View
 
     @model.unset("errors")
 
-    @collection.create @model.toJSON(),
+    @model.save
       success: (createdResource) =>
         @model = createdResource
 

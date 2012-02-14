@@ -16,7 +16,7 @@ class TestDouble.Views.InquiryView extends TestDouble.Views.FormView
 
   initialize: ->
     _.bindAll @
-    @collection.bind "add", @afterSending
+    @model.bind "sync", @afterSending
 
   render: ->
     $(@el).html(@template({model: @model, view: @})).fadeIn(500)

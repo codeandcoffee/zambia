@@ -1,10 +1,8 @@
 describe "TestDouble.Views.InquiryView", ->
   Given -> spyOn(_, "bindAll")
-  Given -> @collection = jasmine.createSpyObj('collection',['bind'])
   Given -> @model = jasmine.createSpyObj('model',['bind','get'])
-  Given -> @subject = new TestDouble.Views.InquiryView
-             collection: @collection
-             model: @model
+  Given -> @subject = new TestDouble.Views.InquiryView model: @model
+
 
   Then -> expect(@subject.template).toBe(JST["backbone/templates/inquiry"])
   Then -> expect(@subject.categories).toEqual [
@@ -14,7 +12,6 @@ describe "TestDouble.Views.InquiryView", ->
 
   context "binding stuff", ->
     Then -> expect(_.bindAll).toHaveBeenCalledWith @subject
-    Then -> expect(@collection.bind).toHaveBeenCalledWith "add", @subject.afterSending
 
   describe "#render", ->
     describe "basic rendering", ->
