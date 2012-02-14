@@ -60,7 +60,7 @@ TestDouble::Application.routes.draw do
 
   root :to => 'site#index'
 
-  mount JasmineRails::Engine => "/specs" unless Rails.env.production?
+  #mount JasmineRails::Engine => "/specs" unless Rails.env.production?
 
   match '*path', :to => 'backbone#hashify_path'
 end

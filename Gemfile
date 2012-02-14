@@ -19,9 +19,6 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'eco'
-
-  gem 'jquery-rails'
-  gem 'rails-backbone'
 end
 
 group :development, :test do
@@ -33,7 +30,6 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'akephalos2', :require => 'akephalos'
 
-  gem 'jasmine-rails'
   gem 'jasmine-headless-webkit'
 
   gem 'guard-rails-assets'
