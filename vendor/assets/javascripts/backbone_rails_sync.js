@@ -5,12 +5,12 @@
     'delete': 'DELETE',
     'read'  : 'GET'
   };
-  
+
   var getUrl = function(object) {
     if (!(object && object.url)) return null;
     return _.isFunction(object.url) ? object.url() : object.url;
   };
-  
+
   var urlError = function() {
     throw new Error("A 'url' property or function must be specified");
   };
@@ -25,6 +25,8 @@
       beforeSend: function( xhr ) {
         var token = $('meta[name="csrf-token"]').attr('content');
         if (token) xhr.setRequestHeader('X-CSRF-Token', token);
+
+        model.trigger('sync:start');
       }
     }, options);
 
@@ -51,9 +53,16 @@
     if (params.type !== 'GET') {
       params.processData = false;
     }
-    
+
+    // Trigger the sync end event
+    var complete = options.complete;
+    params.complete = function(jqXHR, textStatus) {
+      model.trigger('sync:end');
+      if (complete) complete(jqXHR, textStatus);
+    };
+
     // Make the request.
     return $.ajax(params);
   }
-  
+
 }).call(this);
