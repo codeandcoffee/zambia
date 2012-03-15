@@ -1,6 +1,6 @@
-# test-double.com
+# codeandcoffee.info
 
-This is Zambia's website, [test-double.com](http://test-double.com).
+This is Zambia's website, [codeandcoffee.info](http://codeandcoffee.info).
 
 You can run the app with:
 
