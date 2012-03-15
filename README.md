@@ -26,3 +26,6 @@ You can run the jasmine specs by navigating to [/specs](http://localhost:3000/sp
 ``` sh
 bundle exec guard -g js
 ```
+
+A big thanks to the fellas at [Test Double](http://test-double.com) for open sourcing
+their [web site](http://github.com/testdouble/site) to make setting this up much easier. Only some renaming, rather than fighting with guard, the gemfile, and various config files for a while to get backbone, jasmine, rspec, etc, etc, etc all working and playing nicely together.
