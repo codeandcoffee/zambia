@@ -5,3 +5,4 @@ tmp/**/*
 .rvmrc
 .DS_Store
 *~
+.rvmrc

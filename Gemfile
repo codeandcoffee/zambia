@@ -1,28 +1,14 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
+gem 'rails', '3.1.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+#gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'haml'
 
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug'
-
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
 gem 'bson', '=1.2.0'
 gem 'mongo', '=1.2.0'
 gem 'mongoid', '2.0.0.beta.20'
@@ -30,15 +16,38 @@ gem 'bson_ext', '=1.2.0'
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "cancan"
 
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails',   '~> 3.1.4'
+  gem 'coffee-rails', '~> 3.1.1'
+  gem 'uglifier', '>= 1.0.3'
+  gem 'eco'
 
-group :test do
-  gem "rspec", ">=2.2.0"
-  gem "rspec-rails", ">=2.2.1" 
-  gem "mongoid-rspec", "1.2.1"
+  gem 'jquery-rails'
+end
+
+group :development, :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'mongoid-rspec'
+  gem 'rspec-given'
+  gem 'database_cleaner'
+  gem 'cucumber'
+  gem "cucumber-rails", "~> 1.0", require: false  
+  gem 'capybara-webkit'
+  gem 'selenium-webdriver'  
+  gem 'jasmine-rails'
+  gem 'jasmine-headless-webkit', "~> 0.9.0.rc1"
+
+  gem 'guard-rails-assets'
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  gem 'guard-jasmine-headless-webkit', "~> 0.4.0.rc1"
+
+  gem 'growl'
+  gem 'rb-fsevent'
+
+  gem 'spork'
+  gem 'guard-spork'
 end
