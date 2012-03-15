@@ -1,0 +1,10 @@
+<%
+locations = "-r features/support -r features/step_definitions"
+regression_opts = "#{locations} --tags ~@wip --tags ~@future"
+wip_opts = "#{locations} --tags @wip --wip features"
+ci_opts = "CAPYBARA_ENV_TYPE=HEADLESS --format pretty --format html"
+%>
+default: <%= regression_opts %>
+wip: <%= wip_opts %>
+ci: <%= regression_opts %> <%= ci_opts %> --out=tmp/regression_report.html
+ci_wip: <%= wip_opts %> <%= ci_opts %> --out=tmp/wip_report.html

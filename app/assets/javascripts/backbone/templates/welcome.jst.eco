@@ -1,0 +1,10 @@
+<div id="welcome-wrap">
+  <!-- <h1 class="company-hero company-name">test double</h1> -->
+  <img class="logo" alt="test double" src="images/hero.png"/>
+  <p class="subtitle">
+    <span class="official">a software studio in Columbus, Ohio</span>
+  </p>
+  <p class="hero-actions">
+    <a id="contactUsButton" class="btn default large">contact us &#x226b;</a>
+  </p>
+</div>

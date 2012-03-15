@@ -1,0 +1,3 @@
+class TestDouble.Models.Inquiry extends Backbone.Model
+  url: -> "/inquiries/#{@escape('id')}"
+  toJSON: -> {'inquiry': super}

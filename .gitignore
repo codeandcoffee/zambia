@@ -2,7 +2,12 @@
 db/*.sqlite3
 log/*.log
 tmp/**/*
-.rvmrc
 .DS_Store
-*~
 .rvmrc
+tmp/
+.sass-cache/
+.DS_Store
+public/assets
+.jhw-cache
+chromedriver.log
+jhw.*.html
