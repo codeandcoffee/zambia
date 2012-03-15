@@ -1,6 +1,6 @@
 # test-double.com
 
-This is Test Double's website, [test-double.com](http://test-double.com).
+This is Zambia's website, [test-double.com](http://test-double.com).
 
 You can run the app with:
 

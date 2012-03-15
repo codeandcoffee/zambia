@@ -1,4 +1,4 @@
-class TestDouble.Views.InquiryView extends TestDouble.Views.FormView
+class Zambia.Views.InquiryView extends Zambia.Views.FormView
   template: JST["backbone/templates/inquiry"]
 
   categories: [

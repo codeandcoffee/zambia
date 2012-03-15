@@ -1,4 +1,4 @@
-describe "TestDouble.Views.FormView", ->
+describe "Zambia.Views.FormView", ->
   describe "#render", ->
   describe "#save", ->
   describe "#syncForm", ->

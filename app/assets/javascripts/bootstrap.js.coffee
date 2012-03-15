@@ -4,5 +4,5 @@ unless window.jasmineSpecsAreRunning
       xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
 
   $ ->
-    window.router = new TestDouble.Routers.SiteRouter();
+    window.router = new Zambia.Routers.SiteRouter();
     Backbone.history.start();

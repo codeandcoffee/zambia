@@ -1,4 +1,4 @@
-class TestDouble.Views.WelcomeView extends Backbone.View
+class Zambia.Views.WelcomeView extends Backbone.View
   template: JST["backbone/templates/welcome"]
 
   events:

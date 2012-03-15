@@ -1,7 +1,7 @@
-describe "TestDouble.Views.InquiryView", ->
+describe "Zambia.Views.InquiryView", ->
   Given -> spyOn(_, "bindAll")
   Given -> @model = jasmine.createSpyObj('model',['bind','get'])
-  Given -> @subject = new TestDouble.Views.InquiryView model: @model
+  Given -> @subject = new Zambia.Views.InquiryView model: @model
 
 
   Then -> expect(@subject.template).toBe(JST["backbone/templates/inquiry"])
@@ -18,11 +18,11 @@ describe "TestDouble.Views.InquiryView", ->
       HTML = '<div>foo</div>'
       Given -> spyOn($.fn, "fadeIn")
       Given -> spyOn(@subject, "template").when(model: @model, view: @subject).thenReturn HTML
-      Given -> spyOn(TestDouble.Views.InquiryView.__super__, "render")
+      Given -> spyOn(Zambia.Views.InquiryView.__super__, "render")
       When -> @result = @subject.render()
       Then -> expect($(@subject.el)).toHaveHtml HTML
       Then -> expect($.fn.fadeIn).toHaveBeenCalledWith(500)
-      Then -> expect(TestDouble.Views.InquiryView.__super__.render).toHaveBeenCalled()
+      Then -> expect(Zambia.Views.InquiryView.__super__.render).toHaveBeenCalled()
       Then -> @result == @subject
 
     describe "showing the selected category's fields", ->

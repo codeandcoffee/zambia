@@ -1,4 +1,4 @@
-class TestDouble.Views.FormView extends Backbone.View
+class Zambia.Views.FormView extends Backbone.View
   events: ->
     'change :input': 'propogateChangesToModel'
 

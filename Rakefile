@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-TestDouble::Application.load_tasks
+Zambia::Application.load_tasks

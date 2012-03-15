@@ -1,2 +1,2 @@
-describe "TestDouble.Models.Inquiry", ->
-  Given -> @subject = new TestDouble.Models.Inquiry
+describe "Zambia.Models.Inquiry", ->
+  Given -> @subject = new Zambia.Models.Inquiry

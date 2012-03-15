@@ -1,6 +1,6 @@
 <div id="welcome-wrap">
-  <!-- <h1 class="company-hero company-name">test double</h1> -->
-  <img class="logo" alt="test double" src="images/hero.png"/>
+  <!-- <h1 class="company-hero company-name">zambia</h1> -->
+  <img class="logo" alt="zambia" src="images/hero.png"/>
   <p class="subtitle">
     <span class="official">a software studio in Columbus, Ohio</span>
   </p>

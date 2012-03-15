@@ -1,4 +1,4 @@
-TestDouble::Application.routes.draw do
+Zambia::Application.routes.draw do
   resources :inquiries, :defaults => { :format => 'json' }
 
   # The priority is based upon order of creation:

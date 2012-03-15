@@ -1,18 +1,18 @@
-describe "TestDouble.Routers.SiteRouter", ->
-  Given -> @subject = new TestDouble.Routers.SiteRouter
+describe "Zambia.Routers.SiteRouter", ->
+  Given -> @subject = new Zambia.Routers.SiteRouter
   Then -> expect(@subject.routes).toEqual
     "inquiry": "inquiry"
     "inquiry/:category": "inquiry"
     ".*": "welcome"
 
   describe "#inquiry", ->
-    Given -> @inquiryView = fakeBone(TestDouble.Views,"InquiryView",['render'])
-    Given -> @inquiryModel = fakeBone(TestDouble.Models,"Inquiry")
+    Given -> @inquiryView = fakeBone(Zambia.Views,"InquiryView",['render'])
+    Given -> @inquiryModel = fakeBone(Zambia.Models,"Inquiry")
     When -> @subject.inquiry('foo-bar-baz')
     Then ->
       args = @inquiryView.constructor.mostRecentCall.args[0]
       expect(args.el).toEqual($('#contactUs.modal.hidden')[0])
-      expect(args.model).toBeAnInstanceOf(TestDouble.Models.Inquiry)
+      expect(args.model).toBeAnInstanceOf(Zambia.Models.Inquiry)
     Then -> expect(@inquiryModel.constructor).toHaveBeenCalledWith category: 'foo bar baz'
     Then -> expect(@inquiryView.render).toHaveBeenCalled()
 
@@ -23,7 +23,7 @@ describe "TestDouble.Routers.SiteRouter", ->
 
   describe "#welcome", ->
     Given -> @$container = inject('main')
-    Given -> @welcome = fakeBone(TestDouble.Views,"WelcomeView",['render'])
+    Given -> @welcome = fakeBone(Zambia.Views,"WelcomeView",['render'])
     When -> @subject.welcome()
     Then -> expect(@welcome.constructor).toHaveBeenCalledWith
       el: @$container[0]

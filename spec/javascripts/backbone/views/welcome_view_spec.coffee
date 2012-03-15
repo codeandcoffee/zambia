@@ -1,5 +1,5 @@
-describe "TestDouble.Views.WelcomeView", ->
-  Given -> @subject = new TestDouble.Views.WelcomeView
+describe "Zambia.Views.WelcomeView", ->
+  Given -> @subject = new Zambia.Views.WelcomeView
   Then -> expect(@subject.events).toEqual
     "click #contactUsButton": "contactUs"
   Then -> @subject.template == JST["backbone/templates/welcome"]
