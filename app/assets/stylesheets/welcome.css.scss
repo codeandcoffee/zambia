@@ -20,4 +20,22 @@
     text-align: center;
     padding: 20px 10px 0px 0px;
   }
+
+  .main-logo {
+    h2 {
+      display: inline;
+      font-size: 5.2em;
+      margin-left: 12px;
+      font-family: 'Goudy Bookletter 1911', Times, serif;
+      color: #665D51;
+      text-shadow: 4px 4px 4px #D1C5A4;
+      vertical-align: top;
+    }
+
+     img {
+      background-color: white;
+      padding: 8px;
+      border: solid 4px #9BBAC3;
+    }
+  }
 }
