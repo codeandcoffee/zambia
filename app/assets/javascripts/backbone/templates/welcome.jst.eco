@@ -1,10 +1,10 @@
 <div id="welcome-wrap">
   <!-- <h1 class="company-hero company-name">zambia</h1> -->
-  <img class="logo" alt="zambia" src="images/hero.png"/>
   <p class="subtitle">
-    <span class="official">a software studio in Columbus, Ohio</span>
+    <span class="official">Zambia - The Code & Coffee website project</span>
   </p>
-  <p class="hero-actions">
-    <a id="contactUsButton" class="btn default large">contact us &#x226b;</a>
-  </p>
+  <div class='main-logo'>
+    <img alt="Code and Coffee" src="/images/cnc_logo_70.png?1331764651" />
+    <h2>Code &amp; Coffee</h2>
+  </div>
 </div>
