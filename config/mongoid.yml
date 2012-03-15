@@ -1,15 +1,9 @@
-defaults: &defaults
-  host: localhost
-  # slaves:
-  #   - host: slave1.local
-  #     port: 27018
-  #   - host: slave2.local
-  #     port: 27019
-
 development:
+  host: localhost
   database: zambia_development
 
 test:
+  host: localhost
   database: zambia_test
 
 # set these environment variables on your prod server

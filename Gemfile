@@ -9,10 +9,10 @@ gem 'rails', '3.1.1'
 
 gem 'haml'
 
-gem 'bson', '=1.2.0'
-gem 'mongo', '=1.2.0'
-gem 'mongoid', '2.0.0.beta.20'
-gem 'bson_ext', '=1.2.0'
+gem 'bson'
+gem 'mongo'
+gem 'mongoid'
+gem 'bson_ext'
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "cancan"
 
@@ -28,7 +28,7 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'rspec'
+  gem 'rspec', '~> 2.8'
   gem 'rspec-rails'
   gem 'mongoid-rspec'
   gem 'rspec-given'
