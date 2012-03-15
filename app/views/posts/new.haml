@@ -1,9 +1,0 @@
-#post
-  %h1.title
-    Create a new Post
-  #entry
-    %fieldset
-      - form_for @post do |f|
-        = render "form", :form => form, :f => f
-        .section
-          = submit_tag 'Submit'

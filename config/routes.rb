@@ -1,35 +1,4 @@
-Zambia::Application.routes.draw do |map|
-  
-  get "log_in" => "sessions#new", :as => "log_in"
-  get "log_out" => "sessions#destroy", :as => "log_out"
-
-  #get "register" => "users#new", :as => "register"
-
-  resources :users
-  get "posts/list" => "posts#list"
-  resources :sessions
-  resources :posts
-  
-  match "/auth/:provider/callback" => "sessions#create"
-  match "/signout" => "sessions#destroy", :as => :signout
-  
-  get "about/index"
-  get "admin" => "admin#index", :as => "admin"
-
-  root :to => 'home#index'
-
-  get "home/index"
-
-  get "home/about"
-  post "home/contact_email"
-  
-  get "home/staufs"
-  get "home/polaris"
-  get "location/list"
-  
-  
-  resources :location
-    
+Zambia::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -79,11 +48,11 @@ Zambia::Application.routes.draw do |map|
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+  # match ':controller(/:action(/:id))(.:format)'
 end

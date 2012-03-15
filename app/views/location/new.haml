@@ -1,9 +1,0 @@
-#post
-  %h1.title
-    Create a new Location
-  #entry
-    %fieldset
-      - form_for @location, :url => '/location' do |f|
-        = render "form", :form => form, :f => f
-        .section
-          = submit_tag 'Submit'
