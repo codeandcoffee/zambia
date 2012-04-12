@@ -26,7 +26,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'cucumber'
-  gem 'cucumber-rails'
   gem 'capybara-webkit'
   gem 'akephalos2', :require => 'akephalos'
 
@@ -39,8 +38,12 @@ group :development, :test do
 
   gem 'growl'
   gem 'rb-fsevent'
+  gem 'debugger'
 end
 
+group :test do
+  gem 'cucumber-rails'
+end
 
 
 # To use ActiveModel has_secure_password
