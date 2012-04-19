@@ -1,16 +1,3 @@
-<div id="welcome-wrap">
-  <div class="main-logo">
-    <img alt="Code and Coffee" src="/images/cnc_logo_70.png?1331764651" />
-    <h2>Code &amp; Coffee</h2>
-  </div>
-  <div class="row">
-    <div class="span6">
-      <p>Code & Coffee is an informal get together to write some code in the morning before the real job kicks in. There are no requirements other than the willingness to sit down, pair up, and learn something new. We're going with mornings because the evenings are full enough as it is. Why add to the chaos of user groups, soccer games, and lawn mowing?</p>
-      <p>If you're interested in joining in, just show up. No invited needed, you don't need to RSVP, you just need a laptop. Coffee not provided, but it's just a few steps away. ;)</p>
-      <p>Code & Coffee locations are available world wide, check the Locations tab to see if there's one near you. If there isn't a location near you, start one! It's fun!</p>
-    </div>
-    <div class="span6">
-      <div id="locations">Locations</div>
-    </div>
-  </div>
-</div>
+<p>Code & Coffee is an informal get together to write some code in the morning before the real job kicks in. There are no requirements other than the willingness to sit down, pair up, and learn something new. We're going with mornings because the evenings are full enough as it is. Why add to the chaos of user groups, soccer games, and lawn mowing?</p>
+<p>If you're interested in joining in, just show up. No invited needed, you don't need to RSVP, you just need a laptop. Coffee not provided, but it's just a few steps away. ;)</p>
+<p>Code & Coffee locations are available world wide, check the Locations tab to see if there's one near you. If there isn't a location near you, start one! It's fun!</p>

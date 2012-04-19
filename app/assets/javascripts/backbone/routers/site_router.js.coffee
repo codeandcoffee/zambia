@@ -4,5 +4,5 @@ class Zambia.Routers.SiteRouter extends Backbone.Router
 
   welcome: ->
     @welcomeView ||= new Zambia.Views.WelcomeView
-      el: $('.main')[0]
+      el: $('#about')[0]
     @welcomeView.render()
