@@ -1,6 +1,5 @@
 <div id="welcome-wrap">
-  <!-- <h1 class="company-hero company-name">zambia</h1> -->
-  <div class='main-logo'>
+  <div class="main-logo">
     <img alt="Code and Coffee" src="/images/cnc_logo_70.png?1331764651" />
     <h2>Code &amp; Coffee</h2>
   </div>
