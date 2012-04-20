@@ -16,18 +16,11 @@ group :rb do
     # Capybara request specs
     watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }
   end
-
-  guard 'cucumber' do
-    watch(%r{^features/.+\.feature$})
-    watch(%r{^features/support/.+$})          { 'features' }
-    watch(%r{^features/step_definitions/(.+)_steps\.rb$}) { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'features' }
-  end
 end
 
 group :js do
   spec_location = "spec/javascripts/%s_spec"
   guard 'jasmine-headless-webkit' do
-    watch(%r{^app/views/.*\.jst$})
     watch(%r{^public/javascripts/(.*)\.js$}) { |m| newest_js_file(spec_location % m[1]) }
     watch(%r{^app/assets/javascripts/(.*)\.js\.coffee$}) { |m| newest_js_file(spec_location % m[1]) }
     watch(%r{^spec/javascripts/(.*)_spec\..*}) { |m| newest_js_file(spec_location % m[1]) }

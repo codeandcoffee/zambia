@@ -29,12 +29,12 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'akephalos2', :require => 'akephalos'
 
-  gem 'jasmine-headless-webkit', :git => "git://github.com/johnbintz/jasmine-headless-webkit.git"
+  gem 'jasmine-headless-webkit', :git => "git://github.com/johnbintz/jasmine-headless-webkit.git" # "~> 0.9.0.rc1"
 
   gem 'guard-rails-assets'
   gem 'guard-rspec'
   gem 'guard-cucumber'
-  gem 'guard-jasmine-headless-webkit', :git => "git://github.com/johnbintz/guard-jasmine-headless-webkit.git"
+  gem 'guard-jasmine-headless-webkit', :git => "git://github.com/johnbintz/guard-jasmine-headless-webkit.git" # "~> 0.4.0.rc1"
 
   gem 'growl'
   gem 'rb-fsevent'
