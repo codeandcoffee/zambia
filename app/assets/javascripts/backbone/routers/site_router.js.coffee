@@ -8,11 +8,10 @@ class Zambia.Routers.SiteRouter extends Backbone.Router
   
   welcome: ->
     @welcomeView ||= new Zambia.Views.WelcomeView
-      el: $('#about')[0]
-    @welcomeView.render()
     
   locations: ->
-    @locationsView ||= new Zambia.Views.LocationsView
-      el: $('#locations')[0]
-    @locationsView.render()
+    @collection = new Zambia.Collections.Locations
+    @collection.fetch()
+
+    @locationsView ||= new Zambia.Views.LocationsView { collection: @collection }
 

@@ -1,6 +1,10 @@
 class Zambia.Views.WelcomeView extends Backbone.View
   template: JST["backbone/templates/welcome"]
+  el: '#about'
+
+  initialize: ->
+    @render()
 
   render: ->
-    $(this.el).html(@template())
+    $(@el).html @template()
     @

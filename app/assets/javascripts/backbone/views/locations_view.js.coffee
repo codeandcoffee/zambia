@@ -1,17 +1,19 @@
 class Zambia.Views.LocationsView extends Backbone.View
   template: JST["backbone/templates/locations"]
-  
+  el: '#locations'
+
   initialize: ->
-    @collection = new Zambia.Collections.Locations
-    @collection.add new Zambia.Models.Location
-    @collection.add new Zambia.Models.Location { name: "Caribou", meet: "Tuesdays" }
+    @collection.bind 'reset', @render
+    @render()
 
   render: =>
-    $(this.el).html @template
-    @collection.each (location) ->
-      location_view = new Zambia.Views.LocationView model: location
-      $('#location-list').append location_view.render().el
+    $(@el).html @template
+    @locationView(location) for location in @collection.models
     @
+
+  locationView: (location) ->
+    location_view = new Zambia.Views.LocationView model: location
+    $('#location-list').append location_view.render().el
 
 class Zambia.Views.LocationView extends Backbone.View
   tagName: 'li'
