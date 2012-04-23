@@ -16,9 +16,10 @@ class Zambia.Views.LocationsView extends Backbone.View
     $('#location-list').append location_view.render().el
 
 class Zambia.Views.LocationView extends Backbone.View
-  tagName: 'li'
+  tagName: 'div'
+  template: JST["backbone/templates/location"]
 
   render: =>
-    $(@el).html "#{@model.get "name"} on #{@model.get "meet"}"
+    $(@el).html @template {model: @model}
     @
 
