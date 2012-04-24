@@ -4,7 +4,7 @@
       <span class="city"><%= @model.get "city" %></span>
     </div>
     <div class="span2 pull-right">
-      <button class="btn btn-primary check-in" href="#">Check-in</button>
+      <button class="btn btn-primary checkin" href="#">Check-in</button>
       <a class="btn btn-inverse map" href="<%= @model.get "map" %>">Map</a>
     </div>
   </div>

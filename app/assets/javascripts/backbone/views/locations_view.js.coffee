@@ -1,5 +1,6 @@
 class Zambia.Views.LocationsView extends Backbone.View
   template: JST["backbone/templates/locations"]
+
   el: '#locations'
 
   initialize: ->
@@ -17,9 +18,16 @@ class Zambia.Views.LocationsView extends Backbone.View
 
 class Zambia.Views.LocationView extends Backbone.View
   tagName: 'div'
+
   template: JST["backbone/templates/location"]
+
+  events:
+    'click .checkin': 'checkIn'
 
   render: =>
     $(@el).html @template {model: @model}
     @
-
+  
+  checkIn: ->
+    console.log "checked in"
+    console.log @model.get "city"
