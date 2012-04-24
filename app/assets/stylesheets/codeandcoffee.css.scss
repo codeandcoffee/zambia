@@ -35,11 +35,20 @@
   }
 }
 
-#locations {
-
-}
-
 .location-row {
-  border-bottom: solid 1px #ccc;
-  padding: 8px 0 2px 0;
+  padding: 8px 0 36px 0;
+
+  .city{
+    font-size: 2.6em;
+    font-weight: bold;
+  }
+
+  .coffeeshop{
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  .day-time{
+    font-size: 1.2em;
+  }
 }

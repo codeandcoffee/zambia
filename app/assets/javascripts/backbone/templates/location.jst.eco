@@ -1,11 +1,20 @@
-<div class="row location-row">
-  <div class="span4">
-    <h2 class="city"><%= @model.get "city" %></h2>
-    <h3 class="coffeeshop"><%= @model.get "coffeeshop"%></h3>
-    <p class="day-time"><%= @model.get "day" %> @ <%= @model.get "time" %></p>
+<div class="row span6 location-row">
+  <div class="row span6">
+    <div class="span3">
+      <span class="city"><%= @model.get "city" %></span>
+    </div>
+    <div class="span2 pull-right">
+      <button class="btn btn-primary check-in" href="#">Check-in</button>
+      <a class="btn btn-inverse map" href="<%= @model.get "map" %>">Map</a>
+    </div>
   </div>
-  <div class="span2">
-    <p><button class="btn btn-primary btn-large" href="#">Check-in</button></p>
-    <p><a class="btn btn-inverse" href="<%= @model.get "map" %>">Map</a></p>
+
+  <div class="row span6">
+    <div class="span5">
+      <span class="coffeeshop"><%= @model.get "coffeeshop"%></span>
+    </div>
+    <div class="span5">
+      <span class="day-time"><%= @model.get "day" %> @ <%= @model.get "time" %></span>
+    </div>
   </div>
 </div>
