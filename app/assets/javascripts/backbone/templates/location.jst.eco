@@ -5,7 +5,7 @@
     </div>
     <div class="span2 pull-right">
       <button class="btn btn-primary checkin" href="#">Check-in</button>
-      <a class="btn btn-inverse map" href="<%= @model.get "map" %>">Map</a>
+      <a class="btn btn-inverse map" href="#">Map</a>
     </div>
   </div>
 
