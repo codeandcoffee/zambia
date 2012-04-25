@@ -11,3 +11,4 @@ public/assets
 .jhw-cache
 chromedriver.log
 jhw.*.html
+*.orig
