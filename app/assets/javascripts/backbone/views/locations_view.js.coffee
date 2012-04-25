@@ -45,6 +45,4 @@ class Zambia.Views.LocationView extends Backbone.View
     e.preventDefault()
   
   checkIn: ->
-    console.log "checked in"
-    console.log @model.get "city"
-    console.log @model.get "city"
+    console.log "Red 5 checking in..."

@@ -1,4 +1,4 @@
-<div class="row span6 location-row">
+<div class="row location-row">
   <div class="row span6">
     <div class="span3">
       <span class="city"><%= @model.get "city" %></span>
