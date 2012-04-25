@@ -9,6 +9,13 @@ since spread via Twitter to other cities, such as Chicago, Indianapolis and Clev
 
 For more information, see [codeandcoffee.info](http://codeandcoffee.info).
 
+You can generate the postgres databases with:
+
+``` sh
+bundle exec rake db:generate
+bundle exec rake db:migrate
+```
+
 You can run the app with:
 
 ``` sh
