@@ -27,11 +27,4 @@ class Zambia.Views.LocationView extends Backbone.View
     e.preventDefault()
   
   checkIn: ->
-    city = @model.get 'city'
-    url = 'http://twitter.com/intent/tweet?hashtags=codeandcoffee&url=http%3A%2F%2Fcodeandcoffee.info&text=Enjoying%20Code%20and%20Coffee%20in%20' + city
-    window.open url, 'twitter', 'width=300, height=300'
-    console.log "Red 5 checking in..."
-
-    #twttr.events.bind('tweet', function(event) {
-    #// Do something there
-    #});
+    console.log ("Red 5 checking in...")
