@@ -8,8 +8,25 @@ class Zambia.Views.LocationView extends Backbone.View
     'click .map': 'mapPopover'
 
   render: =>
-    $(@el).html @template {model: @model}
+    $(@el).html @template {
+      city: @model.get "city"
+      coffeeshop: @model.get "coffeeshop"
+      day: @model.get "day"
+      time: @model.get "time"
+      buttonTitle: @twitterTitle()
+    }
     @
+
+  twitterTitle: ->
+    title = "Waiting..."
+
+    if @model.get("isToday") is true
+      title = "I'm here!"
+
+    if @model.get("isTomorrow") is true
+      title = "I'm there!"
+
+    return title
 
   mapPopover: (e) ->
     title = "Map of " + @model.get "coffeeshop"
@@ -27,4 +44,5 @@ class Zambia.Views.LocationView extends Backbone.View
     e.preventDefault()
   
   checkIn: ->
-    console.log ("Red 5 checking in...")
+    location = @model.get "city"
+    console.log "I'm at " + location
