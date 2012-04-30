@@ -14,19 +14,39 @@ class Zambia.Views.LocationView extends Backbone.View
       day: @model.get "day"
       time: @model.get "time"
       buttonTitle: @twitterTitle()
+      buttonEnabledClass: @twitterButtonEnabled()
+      buttonTwitterLink: @twitterLink()
     }
     @
 
-  twitterTitle: ->
-    title = "Waiting..."
+  twitterLink: ->
+    link = "#"
+    if @model.get "isToday"
+      link = "https://twitter.com/intent/tweet?text=I am at code and coffee now"
 
-    if @model.get("isToday") is true
+    if @model.get "isTomorrow"
+      link = "https://twitter.com/intent/tweet?text=I will be at code and coffee tomorrow!!"
+
+    return link
+
+  twitterTitle: ->
+    title = "You have to wait..."
+
+    if @model.get "isToday"
       title = "I'm here!"
 
-    if @model.get("isTomorrow") is true
-      title = "I'm there!"
+    if @model.get "isTomorrow"
+      title = "I'll be there!"
 
     return title
+    
+  twitterButtonEnabled: ->
+    buttonClass = "disabled"
+
+    if @model.get("isToday") or @model.get("isTomorrow")
+      buttonClass = ""
+
+    return buttonClass
 
   mapPopover: (e) ->
     title = "Map of " + @model.get "coffeeshop"
