@@ -15,17 +15,20 @@ class Zambia.Views.LocationView extends Backbone.View
       time: @model.get "time"
       buttonTitle: @twitterTitle()
       buttonEnabledClass: @twitterButtonEnabled()
-      buttonTwitterLink: @twitterLink()
+      buttonTwitterLink: if @isTodayOrTomorrow() then @twitterLink() else "#"
     }
     @
 
   twitterLink: ->
     link = "#"
+    baseLink = "http://twitter.com/intent/tweet?hashtags=codeandcoffee&url=http%3A%2F%2Fcodeandcoffee.info"
     if @model.get "isToday"
-      link = "https://twitter.com/intent/tweet?text=I am at code and coffee now"
+      text = "&text=Livin' it up at the " + @model.get("city") + " code and coffee this morning."
+      link = baseLink + text
 
     if @model.get "isTomorrow"
-      link = "https://twitter.com/intent/tweet?text=I will be at code and coffee tomorrow!!"
+      text = "&text=I will be at " + @model.get("city") + " code and coffee tomorrow! Wanna join me?"
+      link = baseLink + text
 
     return link
 
@@ -43,10 +46,13 @@ class Zambia.Views.LocationView extends Backbone.View
   twitterButtonEnabled: ->
     buttonClass = "disabled"
 
-    if @model.get("isToday") or @model.get("isTomorrow")
+    if @isTodayOrTomorrow()
       buttonClass = ""
 
     return buttonClass
+
+  isTodayOrTomorrow: ->
+    return @model.get("isToday") or @model.get("isTomorrow")
 
   mapPopover: (e) ->
     title = "Map of " + @model.get "coffeeshop"
