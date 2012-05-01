@@ -5,38 +5,36 @@
   behavior: url(/PIE/PIE.htc);
 }
 
-#welcome-wrap {
-  .subtitle {
-    text-align: center;
-    font-size: 1.6em;
-  }
-
-  .official {
-    font-family: 'Gill Sans', sans-serif;
+.main-logo {
+  h2 {
+    display: inline;
+    font-size: 5.2em;
+    font-family: 'Goudy Bookletter 1911', Times, serif;
     color: #665D51;
+    text-shadow: 4px 4px 4px #D1C5A4;
   }
 
-  .main-logo {
-    h2 {
-      display: inline;
-      font-size: 5.2em;
-      margin: 0 120px 0 50px; 
-      font-family: 'Goudy Bookletter 1911', Times, serif;
-      color: #665D51;
-      text-shadow: 4px 4px 4px #D1C5A4;
-      vertical-align: middle;
-    }
-
-     img {
-      background-color: white;
-      padding: 8px;
-      border: solid 4px #9BBAC3;
-    }
-
-    button {
-      vertical-align: top;
-    }
+   img {
+    background-color: white;
+    padding: 8px;
+    border: solid 4px #9BBAC3;
   }
+}
+
+#today {
+  background-color: #d1c5a4;
+}
+
+#tomorrow {
+  background-color: #9faa80;
+}
+
+#about {
+  background-color: #f5f3e6;
+}
+
+.col-div{
+  margin: 8px;
 }
 
 .location-row {

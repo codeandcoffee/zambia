@@ -1,0 +1,4 @@
+<div class="col-div">
+  <h2>Where To Code Today!</h2>
+  <div id="today-list"></div>
+</div>
