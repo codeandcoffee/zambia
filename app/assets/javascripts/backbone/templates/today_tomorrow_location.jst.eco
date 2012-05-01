@@ -1,0 +1,3 @@
+<h3><%= @city %></h3>
+<p><%= @coffeeshop %> @ <%= @time %></p>
+<a class="btn btn-mini btn-primary tweet-it" href="<%= @twitterLink %>"><%= @linkText %></a>

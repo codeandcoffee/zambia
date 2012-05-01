@@ -3,10 +3,6 @@
     <div class="span2">
       <span class="city"><%= @city %></span>
     </div>
-    <div class="span3 pull-right">
-      <a class="btn btn-primary checkin <%= @buttonEnabledClass %>" href="<%= @buttonTwitterLink %>"><%= @buttonTitle %></a>
-      <a class="btn btn-inverse map" href="#">Map</a>
-    </div>
   </div>
 
   <div class="row span6">
