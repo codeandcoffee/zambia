@@ -1,6 +1,5 @@
 describe "Zambia.Views.LocationsView", ->
-  #Given -> @subject = new Zambia.Views.LocationsView
-  #Then ->  expect(true).toBeTruthy
-  #Then -> console.log @subject.something
-  #@subject.template == "backbone/templates/locations"
-
+  Given -> @collection = new Backbone.Collection
+  Given -> @subject = new Zambia.Views.LocationsView collection: @collection
+  Then -> @subject.shouldBeDefined
+  Then -> @subject.tagName == 'div'
