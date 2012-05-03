@@ -37,20 +37,8 @@
   margin: 8px;
 }
 
-.location-row {
-  padding: 8px 0 36px 0;
-
-  .city{
-    font-size: 2.6em;
-    font-weight: bold;
-  }
-
-  .coffeeshop{
-    font-size: 1.2em;
-    font-weight: bold;
-  }
-
-  .day-time{
-    font-size: 1.2em;
-  }
+.location-row{
+  margin: 6px 0;
+  background-color: #f5f3e6;
+  border: 1px solid #d1c5a4;
 }
