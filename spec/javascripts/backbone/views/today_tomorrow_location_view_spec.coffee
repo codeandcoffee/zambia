@@ -4,6 +4,10 @@ describe "Zambia.Views.TodayTomorrowLocationView", ->
     Given -> @subject = new Zambia.Views.TodayTomorrowLocationView model: @model
     Then -> @subject.shouldBeDefined
 
+    describe "event bindings", ->
+      Then -> @subject.events["click .tweet-it"].shouldBeDefined
+      Then -> expect(@subject.events["click .tweet-it"]).toBe "tweetIt"
+
     describe "#twitterLink", ->
       Given -> @twitterLink = @subject.twitterLink()
       Then -> expect(@twitterLink).toContain("twitter.com")
