@@ -3,7 +3,6 @@ class Zambia.Views.LocationView extends Backbone.View
 
   events:
     'click .checkin': 'checkIn'
-    'click .map': 'mapPopover'
 
   render: =>
     $(@el).html @template {
