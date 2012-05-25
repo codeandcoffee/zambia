@@ -1,8 +1,8 @@
-describe "Zambia.Views.LocationView", ->
+describe 'Zambia.Views.LocationView', ->
   Given ->
     @data = 
-      city: "Ashland"
-      coffeeshop: "Staufs"
+      city: 'Ashland'
+      coffeeshop: 'Staufs'
       day: 'Monday'
       time: '9:00'
     @model = new Backbone.Model @data
@@ -11,12 +11,11 @@ describe "Zambia.Views.LocationView", ->
     model: @model
   Then -> expect(@subject).toBeDefined()
 
-  describe "#render", ->
+  describe '#render', ->
     Given ->
       spyOn($.fn, 'html')
-      spyOn(@subject, "template")
+      spyOn(@subject, 'template')
     When -> @result = @subject.render()
     Then -> @result == @subject
     Then -> expect($.fn.html).toHaveBeenCalledWith @subject.template()
     Then -> expect(@subject.template).toHaveBeenCalledWith @data
-    
