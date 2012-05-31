@@ -11,9 +11,9 @@ class LocationsController < ApplicationController
   private
 
   def set_up_today_and_tomorrow
-    now = LOCATIONS
+    now = Location.data
 
-    now.each do |location|
+    Location.data.map do |location|
       location[:isToday] = false if location[:isToday]
       location[:isTomorrow] = false if location[:isTomorrow]
     end

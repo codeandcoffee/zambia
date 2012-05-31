@@ -3,7 +3,7 @@ grandview:
   - coffeeshop:  "Stauf's" 
   - day:  "Thursday" 
   - time:  "7:00"
-  - map:  "http://maps.google.com/maps?q=1277+Grandview+Avenue,+OH,+43212&hl=en&ll=39.985604,-83.044968&spn=0.045969,0.075703&hnear=1277+Grandview+Ave,+Columbus,+Franklin,+Ohio+43212&t=m&z=14&iwloc=A&output=embed",
+  - map:  "http://maps.google.com/maps?q=1277+Grandview+Avenue,+OH,+43212&hl=en&ll=39.985604,-83.044968&spn=0.045969,0.075703&hnear=1277+Grandview+Ave,+Columbus,+Franklin,+Ohio+43212&t=m&z=14&iwloc=A&output=embed"
   - id:  "cbus-staufs" 
 
 chicago:
