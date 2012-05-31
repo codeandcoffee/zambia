@@ -1,6 +1,6 @@
 describe 'Zambia.Views.LocationView', ->
   Given ->
-    @data = 
+    @data =
       city: 'Ashland'
       coffeeshop: 'Staufs'
       day: 'Monday'
