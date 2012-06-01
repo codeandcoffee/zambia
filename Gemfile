@@ -25,6 +25,7 @@ end
 group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'rspec-given'
   gem 'database_cleaner'
   gem 'cucumber'
   gem 'capybara-webkit'
