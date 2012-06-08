@@ -8,8 +8,7 @@ class Zambia.Views.LocationView extends Backbone.View
     $(@el).html @template {
       city: @model.get "city"
       coffeeshop: @model.get "coffeeshop"
-      day: @model.get "day"
-      time: @model.get "time"
+      dayAndTime: @model.dayAndTime()
     }
     @
   

@@ -4,6 +4,6 @@
   </div>
 
   <div class="row span6">
-    <p><%= @coffeeshop %> on <%= @day %> @ <%= @time %></p>
+    <p><%= @coffeeshop %> on <%= @dayAndTime %></p>
   </div>
 </div>

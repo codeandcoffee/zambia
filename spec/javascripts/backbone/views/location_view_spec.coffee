@@ -5,7 +5,7 @@ describe 'Zambia.Views.LocationView', ->
       coffeeshop: 'Staufs'
       day: 'Monday'
       time: '9:00'
-    @model = new Backbone.Model @data
+    @model = new Zambia.Models.Location @data
       
   Given -> @subject = new Zambia.Views.LocationView
     model: @model
@@ -18,4 +18,6 @@ describe 'Zambia.Views.LocationView', ->
     When -> @result = @subject.render()
     Then -> @result == @subject
     Then -> expect($.fn.html).toHaveBeenCalledWith @subject.template()
-    Then -> expect(@subject.template).toHaveBeenCalledWith @data
+    Then -> 
+      expect(@subject.template).toHaveBeenCalledWith(
+        city: 'Ashland', coffeeshop: 'Staufs', dayAndTime: 'Monday @ 9:00')
