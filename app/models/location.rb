@@ -1,7 +1,19 @@
 class Location
-  def all    
-    raw_yaml_data.to_a.map do |loc|
+  def all
+    @locations ||= raw_yaml_data.to_a.map do |loc|
       loc[1].merge({'id' => loc.first})
+    end
+  end
+
+  def wday(location)
+    day = location['day']
+    day ? Chronic.parse(day).wday : nil
+  end
+
+  def sort
+    all.sort_by do |loc| 
+      day = wday(loc)
+      day ? day : 8
     end
   end
 
@@ -12,7 +24,7 @@ class Location
     locs = mark_today_in_locations(locs)
     locs = mark_tomorrow_in_locations(locs)
 
-    locs
+    @locations = locs
   end
   
   def filename
@@ -37,13 +49,13 @@ class Location
   end
 
   def mark_today_in_locations(locations)
-    todays_locs = locations.select { |loc| Chronic.parse(loc['day']).wday == Time.now.wday }
+    todays_locs = locations.select { |loc| wday(loc) == Time.now.wday }
     todays_locs.each { |loc| loc['isToday'] = true }    
     locations
   end
 
   def mark_tomorrow_in_locations(locations)
-    tomorrows_locs = locations.select { |loc| Chronic.parse(loc['day']).wday == Time.now.tomorrow.wday }
+    tomorrows_locs = locations.select { |loc| wday(loc) == Time.now.tomorrow.wday }
     tomorrows_locs.each { |loc| loc['isTomorrow'] = true }
     locations
   end

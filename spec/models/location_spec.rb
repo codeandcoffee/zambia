@@ -42,7 +42,7 @@ describe Location do
         subject.stub!(:all => locs)
       end
       When(:todays_locations) { subject.set_up_today_and_tomorrow.select { |loc| loc['isToday']  } }
-      Then { todays_locations.count.should == 7 }
+      Then { todays_locations.count.should >= 7 }
     end
 
     context "one location is happening tomorrow" do
@@ -58,7 +58,7 @@ describe Location do
         subject.stub!(:all => locs)
       end
       When(:tomorrows_locations) { subject.set_up_today_and_tomorrow.select { |loc| loc['isTomorrow']  } }
-      Then { tomorrows_locations.count.should == 7 }
+      Then { tomorrows_locations.count.should >= 7 }
     end
 
     context "prior today's and tomorrows get erased" do
@@ -81,6 +81,29 @@ describe Location do
         Then { tomorrows_locations.count.should == 1 }
       end
     end
+  end
+
+  describe "#wday" do
+    When(:wday) { subject.wday(location)  }
+    context "Thursday" do
+      When(:location) { subject.all[0] }
+      Then { wday.should == 4 }
+    end
+    context "Saturday" do
+      When(:location) { subject.all[4] }
+      Then { wday.should == 3 }
+    end
+    context "We really love the moon" do
+      When(:location) { subject.all[7] } 
+      Then { wday.should == nil }
+    end
+  end
+
+  describe "#sort" do
+    When(:sorted) { subject.sort }
+    Then { sorted[0]['id'].should == "ak" }
+    Then { sorted[6]['id'].should == "hs" }
+    Then { sorted[7]['id'].should == "moon" }
   end
 
   describe "#locations_filename" do

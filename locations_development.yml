@@ -46,3 +46,8 @@ ak:
   day: "Sunday"
   time: "9:30" 
   map: "http://maps.google.com/?ll=28.357086,-81.590824&spn=0.0033,0.004946&t=h&z=18&output=embed"
+
+moon:
+  city: "Tranquility"
+  coffeeshop: "The Dark Side"
+  map: "http://maps.google.com/?ll=28.357086,-81.590824&spn=0.0033,0.004946&t=h&z=18&output=embed"
