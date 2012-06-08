@@ -97,6 +97,14 @@ describe Location do
       When(:location) { subject.all[7] } 
       Then { wday.should == nil }
     end
+    context "3rd Thursday" do
+      When(:location) { subject.all[8] }
+      Then { wday.should == nil }
+    end
+    context "locationally challenged" do
+      When(:location) { nil }
+      Then { wday.should == nil }
+    end
   end
 
   describe "#sort" do

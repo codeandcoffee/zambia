@@ -51,3 +51,10 @@ moon:
   city: "Tranquility"
   coffeeshop: "The Dark Side"
   map: "http://maps.google.com/?ll=28.357086,-81.590824&spn=0.0033,0.004946&t=h&z=18&output=embed"
+
+raleigh-newworld:
+  city: "Raleigh"
+  coffeeshop: "New World Coffee House"
+  day: "3rd Thursday"
+  time: "7:30"
+  map: "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=4112+Pleasant+Valley+Road,+NC,+"  

@@ -6,8 +6,10 @@ class Location
   end
 
   def wday(location)
-    day = location['day']
-    day ? Chronic.parse(day).wday : nil
+    return nil unless location
+    
+    time = Chronic.parse(location['day'])
+    time ? time.wday : nil
   end
 
   def sort
