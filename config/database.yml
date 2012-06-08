@@ -1,32 +1,23 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-development:
+common: &common
   adapter: postgresql 
   encoding: unicode
-  database: zambia_development
+  username: postgres
   pool: 5
-  username: zambia
-  password: latte
+
+development:
+  <<: *common
+  database: zambia_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test: &test
-  adapter: postgresql 
-  encoding: unicode
+  <<: *common
   database: zambia_test
-  pool: 5
-  username: zambia
-  password: latte
 
 production:
-  adapter: postgresql 
-  encoding: unicode
+  <<: *common
   database: zambia
-  pool: 5
 
 cucumber:
   <<: *test

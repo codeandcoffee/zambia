@@ -1,0 +1,13 @@
+language: ruby
+bundler_args: --without development
+before_script: 
+  - "sh -e /etc/init.d/xvfb start && sudo aptitude -y -q install unzip chromium-browser"
+  - psql -c 'create database zambia_test;' -U postgres
+  - bundle exec rake db:migrate
+script: "bundle exec rake travis"
+rvm:
+  - 1.9.2
+branches:
+  only:
+    - master
+
