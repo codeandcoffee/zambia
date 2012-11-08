@@ -26,7 +26,7 @@ southbend-mainstcoffee:
   time: "7:00"
   map: "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=102%20North%20Main%20Street%20South%20Bend,+IN,+46601"
 
-stockhom-lecafé:
+stockhom-lecafe:
   city: "Stockholm"
   coffeeshop: "Le Café"
   day: "Thursday"
@@ -54,7 +54,7 @@ ottawa-starbucks:
   time: "8:00"
   map: "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=81+Metcalfe+Street,+ON,+K1A1M5"
 
-toulouse-délis:
+toulouse-delis:
   city: "Toulouse"
   coffeeshop: "Le Déli's"
   day: "Thursday"
