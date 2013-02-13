@@ -1,12 +1,13 @@
 common: &common
-  adapter: postgresql 
+  adapter: postgresql
   encoding: unicode
-  username: postgres
+  # username: postgres
   pool: 5
 
 development:
   <<: *common
   database: zambia_development
+  host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -14,6 +15,7 @@ development:
 test: &test
   <<: *common
   database: zambia_test
+  host: localhost
 
 production:
   <<: *common
