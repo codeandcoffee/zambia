@@ -1,7 +1,5 @@
-//= require underscore-min
-//= require jquery-min
-//= require backbone-min
-//= require bootstrap-alerts
-//= require bootstrap-tooltip
-//= require bootstrap-popover
+//= require underscore
+//= require jquery
+//= require backbone
+//= require bootstrap
 //= require_tree .

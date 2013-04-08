@@ -18,6 +18,6 @@ describe 'Zambia.Views.LocationView', ->
     When -> @result = @subject.render()
     Then -> @result == @subject
     Then -> expect($.fn.html).toHaveBeenCalledWith @subject.template()
-    Then -> 
+    Then ->
       expect(@subject.template).toHaveBeenCalledWith(
         city: 'Ashland', coffeeshop: 'Staufs', dayAndTime: 'Monday @ 9:00')

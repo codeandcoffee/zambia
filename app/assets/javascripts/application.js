@@ -5,6 +5,5 @@
 // the compiled file.
 //
 //= require vendor
-//= require bootstrap
 //= require backbone/zambia
 //= require_tree .
