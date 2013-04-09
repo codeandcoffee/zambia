@@ -5,6 +5,7 @@ src_files:
 stylesheets:
 
 helpers:
+  - "helpers/jasmine-fixture*.js"
   - "helpers/**/*.{js,coffee}"
 
 spec_files:

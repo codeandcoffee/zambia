@@ -1,7 +1,16 @@
+
+/*
+jasmine-given 2.0.0
+Adds a Given-When-Then DSL to jasmine as an alternative style for specs
+site: https://github.com/searls/jasmine-given
+*/
+
+
 (function() {
 
   (function(jasmine) {
-    var mostRecentlyUsed, o, stringifyExpectation;
+    var getBlock, mostRecentExpectations, mostRecentlyUsed, o, root, stringifyExpectation, whenList;
+    mostRecentlyUsed = null;
     stringifyExpectation = function(expectation) {
       var matches;
       matches = expectation.toString().replace(/\n/g, '').match(/function\s?\(\)\s?{\s*(return\s+)?(.*?)(;)?\s*}/i);
@@ -36,16 +45,32 @@
         }
       });
     });
-    window.When = window.Given = function() {
-      var assignResultTo, mostRecentlyUsed, setupFunction;
-      setupFunction = o(arguments).firstThat(function(arg) {
+    root = this;
+    root.Given = function() {
+      mostRecentlyUsed = root.Given;
+      return beforeEach(getBlock(arguments));
+    };
+    whenList = [];
+    root.When = function() {
+      var b;
+      mostRecentlyUsed = root.When;
+      b = getBlock(arguments);
+      beforeEach(function() {
+        return whenList.push(b);
+      });
+      return afterEach(function() {
+        return whenList.pop();
+      });
+    };
+    getBlock = function(thing) {
+      var assignResultTo, setupFunction;
+      setupFunction = o(thing).firstThat(function(arg) {
         return o(arg).isFunction();
       });
-      assignResultTo = o(arguments).firstThat(function(arg) {
+      assignResultTo = o(thing).firstThat(function(arg) {
         return o(arg).isString();
       });
-      mostRecentlyUsed = window.Given;
-      return beforeEach(function() {
+      return function() {
         var context, result;
         context = jasmine.getEnv().currentSpec;
         result = setupFunction.call(context);
@@ -56,18 +81,26 @@
             throw new Error("Unfortunately, the variable '" + assignResultTo + "' is already assigned to: " + context[assignResultTo]);
           }
         }
-      });
-    };
-    window.Then = function(expectationFunction) {
-      var expectations, mostRecentlyUsed, subsequentThen;
-      mostRecentlyUsed = window.Then;
-      expectations = [expectationFunction];
-      subsequentThen = function(additionalExpectation) {
-        expectations.push(additionalExpectation);
-        return this;
       };
-      it("then " + (stringifyExpectation(expectations)), function() {
-        var i, _results;
+    };
+    mostRecentExpectations = null;
+    root.Then = function() {
+      var expectationFunction, expectations, label;
+      label = o(arguments).firstThat(function(arg) {
+        return o(arg).isString();
+      });
+      expectationFunction = o(arguments).firstThat(function(arg) {
+        return o(arg).isFunction();
+      });
+      mostRecentlyUsed = root.subsequentThen;
+      mostRecentExpectations = expectations = [expectationFunction];
+      it("then " + (label != null ? label : stringifyExpectation(expectations)), function() {
+        var block, i, _i, _len, _ref, _results;
+        _ref = whenList != null ? whenList : [];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          block = _ref[_i];
+          block();
+        }
         i = 0;
         _results = [];
         while (i < expectations.length) {
@@ -81,8 +114,12 @@
         And: subsequentThen
       };
     };
-    mostRecentlyUsed = window.Given;
-    window.And = function() {
+    root.subsequentThen = function(additionalExpectation) {
+      mostRecentExpectations.push(additionalExpectation);
+      return this;
+    };
+    mostRecentlyUsed = root.Given;
+    root.And = function() {
       return mostRecentlyUsed.apply(this, jasmine.util.argsToArray(arguments));
     };
     return o = function(thing) {
@@ -97,9 +134,12 @@
           var i;
           i = 0;
           while (i < thing.length) {
-            if (test(thing[i]) === true) return thing[i];
+            if (test(thing[i]) === true) {
+              return thing[i];
+            }
             i++;
           }
+          return void 0;
         }
       };
     };

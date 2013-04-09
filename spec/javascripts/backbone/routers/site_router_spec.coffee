@@ -1,13 +1,12 @@
 describe "Zambia.Routers.SiteRouter", ->
-  #describe "#welcome", ->
-    #Given -> @$container = inject('main')
-    #Given -> @welcome = fakeBone(Zambia.Views,"WelcomeView",['render'])
-    #When -> @subject.welcome()
-    #Then -> expect(@welcome.constructor).toHaveBeenCalledWith
-      #el: @$container[0]
-    #Then -> expect(@welcome.render).toHaveBeenCalled()
+  describe "routes", ->
+    Given -> @subject = new Zambia.Routers.SiteRouter
+    Given -> affix('.location-list')
+    Then -> expect(@subject.routes).toEqual
+      ".*": "whereAndWhen"
 
-    #context "memoizing subsequent calls", ->
-      #When -> @subject.welcome()
-      #Then -> @welcome.constructor.callCount == 1
-      #Then -> @welcome.render.callCount == 2
+    describe "whereAndWhen", ->
+      Given -> @viewSpy = spyOnConstructor(Zambia.Views, 'Locations', ["render"])
+      Given -> @viewSpy.render.andReturn el: $('<div class="spongebob"></div>')
+      When -> @subject.whereAndWhen()
+      Then -> expect($('.location-list').html()).toContain('<div class="spongebob">')
