@@ -1,9 +1,6 @@
-<div class="row location-row">
-  <div class="row span6">
-    <h3><%= @city %></h3>
-  </div>
-
-  <div class="row span6">
-    <p><%= @coffeeshop %> on <%= @dayAndTime %></p>
-  </div>
-</div>
+<p><%= @city %></p>
+<p><%= @coffeeshop %></p>
+<p><%= @day %></p>
+<p><%= @time %></p>
+<p><a href="<%= @map %>">Map</a></p>
+<p><%= @dayAndTime %></p>

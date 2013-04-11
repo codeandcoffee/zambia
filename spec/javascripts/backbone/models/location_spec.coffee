@@ -21,4 +21,9 @@ describe "Zambia.Models.Location", ->
       When ->  @dayAndTime = @subject.dayAndTime()
       Then ->  expect(@dayAndTime).toBe("TBA")
 
+  describe "dayAndTime attribute", ->
+    Given -> @subject = new Zambia.Models.Location
+    Given -> @subject.set 'day', 'Thursday'
+    Given -> @subject.set 'time', '7:00'
+    Then -> @subject.dayAndTime() == "Thursday @ 7:00"
 
