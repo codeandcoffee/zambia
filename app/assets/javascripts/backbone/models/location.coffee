@@ -1,5 +1,4 @@
 class Zambia.Models.Location extends Backbone.Model
-      
   dayAndTime: ->
     day = @get('day')
     time = @get('time')

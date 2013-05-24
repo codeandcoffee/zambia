@@ -1,6 +1,4 @@
-<p><%= @city %></p>
-<p><%= @coffeeshop %></p>
-<p><%= @day %></p>
-<p><%= @time %></p>
+<h4><%= @city %></h4>
+<span><%= @coffeeshop %></span></br>
+<span><%= @day %> <%= @time %></span>
 <p><a href="<%= @map %>">Map</a></p>
-<p><%= @dayAndTime %></p>

@@ -1,10 +1,10 @@
 describe "Zambia.Models.Location", ->
-  Given -> @collection = new Zambia.Collections.Locations(window.locationsData())
-  Given -> @subject = @collection.get('cbus-staufs')
+  Given -> @subject = new Zambia.Models.Location {day: 'Thursday', time: '7:00'}
 
   describe "#dayAndTime", ->
-    When -> @dayAndTime = @subject.dayAndTime()
-    Then -> expect(@dayAndTime).toBe("Thursday @ 7:00")
+    context "both day and time", ->
+      When -> @dayAndTime = @subject.dayAndTime()
+      Then -> expect(@dayAndTime).toBe("Thursday @ 7:00")
 
     context "no day", ->
       Given -> @subject.set({day: null})
@@ -17,13 +17,6 @@ describe "Zambia.Models.Location", ->
       Then ->  expect(@dayAndTime).toBe("Thursday")
 
     context "nada", ->
-      Given -> @subject = @collection.get('moon')
+      Given -> @subject.set({day: null, time: null})
       When ->  @dayAndTime = @subject.dayAndTime()
       Then ->  expect(@dayAndTime).toBe("TBA")
-
-  describe "dayAndTime attribute", ->
-    Given -> @subject = new Zambia.Models.Location
-    Given -> @subject.set 'day', 'Thursday'
-    Given -> @subject.set 'time', '7:00'
-    Then -> @subject.dayAndTime() == "Thursday @ 7:00"
-
